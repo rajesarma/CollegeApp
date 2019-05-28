@@ -1,0 +1,21 @@
+
+]squid:S4684´"@Replace this persistent entity with a simple POJO or DTO object.(¦ªÇñüÿÿÿÿ
+asquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(ë’¦}
+Xsquid:S4684Û"@Replace this persistent entity with a simple POJO or DTO object.(ÛÇàş
+?squid:S1148v"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Vsquid:S4684W"@Replace this persistent entity with a simple POJO or DTO object.(Ş»ù
+csquid:S1192J"LDefine a constant instead of duplicating this literal "studentData" 9 times.(¿€•÷
+bsquid:S1192J"KDefine a constant instead of duplicating this literal "studentAdd" 7 times.(¿€•÷
+isquid:S1192«"LDefine a constant instead of duplicating this literal "studentList" 5 times.(’ Ñ”øÿÿÿÿ
+csquid:CommentedOutCodeLineÇ"<This block of commented-out lines of code should be removed.(¢†’ş
+csquid:S1192O"GDefine a constant instead of duplicating this literal "action" 5 times.(§®ÁÚúÿÿÿÿ
+dsquid:S1192<"HDefine a constant instead of duplicating this literal "message" 7 times.(ÁĞ™ùÿÿÿÿ
+>squid:S1452–"&Remove usage of generic wildcard type.(Ü«ŒÈ
+]squid:S4684ó"@Replace this persistent entity with a simple POJO or DTO object.(£æ¥Ûÿÿÿÿÿ
+csquid:S1192N"LDefine a constant instead of duplicating this literal "buttonValue" 5 times.(Í¶ò
+gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ğ‡Â°ÿÿÿÿÿ
+bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(‰ììØ
+gsquid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(ğ‡Â°ÿÿÿÿÿ
+fsquid:S3008,"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÀ³
+bsquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.(ËÈôÉ
+psquid:S1192O"MDefine a constant instead of duplicating this literal "/student/add" 3 times.(§®ÁÚúÿÿÿÿ8êÍÏí¯-

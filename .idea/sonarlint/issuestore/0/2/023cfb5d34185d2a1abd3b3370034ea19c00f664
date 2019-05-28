@@ -1,0 +1,34 @@
+
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(‚Ø ‹úÿÿÿÿ
+fsquid:S1192"ODefine a constant instead of duplicating this literal " from users u " 4 times.(¹Ï§
+Š"squid:ClassVariableVisibilityCheckN"WMake getAllUsers a static final constant or non-public and provide accessors if needed.(ÀÚ§®şÿÿÿÿ
+Š"squid:ClassVariableVisibilityCheck_"WMake getSubjects a static final constant or non-public and provide accessors if needed.(“ğªÀÿÿÿÿÿ
+Psquid:S1444R"4Make this "public static getBloodGroups" field final(‡ëôæûÿÿÿÿ
+Esquid:S1444O".Make this "public static getRoles" field final(ŒÓ÷‡
+Msquid:S1444Q"6Make this "public static getAcademicYears" field final(»íô
+Isquid:S1444Y"2Make this "public static getSemesters" field final(ƒº±•
+xsquid:S1488‡"[Immediately return this expression instead of assigning it to the temporary variable "sql".(‡É¬Šùÿÿÿÿ
+Š"squid:ClassVariableVisibilityCheckQ"\Make getAcademicYears a static final constant or non-public and provide accessors if needed.(»íô
+ssquid:S1488‚"[Immediately return this expression instead of assigning it to the temporary variable "sql".(¨£üé
+…squid:S1192"iDefine a constant instead of duplicating this literal " join user_roles ur on u.id = ur.user_id" 3 times.(é’¢œıÿÿÿÿ
+squid:S1192
+"hDefine a constant instead of duplicating this literal " join roles r on r.role_id = ur.role_id" 3 times.(¿àÀº
+Msquid:S1444V"7Make this "public static getQualifications" field final(¸ùù	
+Msquid:S1444T"1Make this "public static getBranches" field final(ƒÆ…üÿÿÿÿ
+wsquid:S1488u"[Immediately return this expression instead of assigning it to the temporary variable "sql".(¬‚í¦øÿÿÿÿ
+ssquid:S1488Œ"[Immediately return this expression instead of assigning it to the temporary variable "sql".(¤ºÜÕ
+Dsquid:S1444n".Make this "public static getYears" field final(ÎúëQ
+"squid:ClassVariableVisibilityCheckR"ZMake getBloodGroups a static final constant or non-public and provide accessors if needed.(‡ëôæûÿÿÿÿ
+rsquid:S14886"[Immediately return this expression instead of assigning it to the temporary variable "sql".(ê¡²õ
+qsquid:S1488z"[Immediately return this expression instead of assigning it to the temporary variable "sql".(–¤ô
+Š"squid:ClassVariableVisibilityCheckT"WMake getBranches a static final constant or non-public and provide accessors if needed.(ƒÆ…üÿÿÿÿ
+†"squid:ClassVariableVisibilityCheckY"XMake getSemesters a static final constant or non-public and provide accessors if needed.(ƒº±•
+"squid:ClassVariableVisibilityCheckn"TMake getYears a static final constant or non-public and provide accessors if needed.(ÎúëQ
+Msquid:S1444N"1Make this "public static getAllUsers" field final(ÀÚ§®şÿÿÿÿ
+wsquid:S1488""[Immediately return this expression instead of assigning it to the temporary variable "sql".(¥ƒ™¸øÿÿÿÿ
+‹"squid:ClassVariableVisibilityCheckU"XMake getExamTypes a static final constant or non-public and provide accessors if needed.(…ƒ˜œıÿÿÿÿ
+Msquid:S1444_"1Make this "public static getSubjects" field final(“ğªÀÿÿÿÿÿ
+ssquid:S1488‘"[Immediately return this expression instead of assigning it to the temporary variable "sql".(ÄœÑ
+Š"squid:ClassVariableVisibilityCheckV"]Make getQualifications a static final constant or non-public and provide accessors if needed.(¸ùù	
+Nsquid:S1444U"2Make this "public static getExamTypes" field final(…ƒ˜œıÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheckO"TMake getRoles a static final constant or non-public and provide accessors if needed.(ŒÓ÷‡

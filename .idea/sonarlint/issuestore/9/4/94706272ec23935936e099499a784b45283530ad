@@ -1,0 +1,14 @@
+
+]squid:UselessImportCheck	"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ä¬×¢®-
+gsquid:UselessImportCheck	"7Remove this unused import 'javax.persistence.Temporal'.(…ò­“üÿÿÿÿ8¸—£Å®-
+gsquid:UselessImportCheck"7Remove this unused import 'javax.persistence.EnumType'.(ˆ«¨–üÿÿÿÿ8Æì§Å®-
+dsquid:UselessImportCheck"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8ûõ©È®-
+Vsquid:UselessImportCheck	"+Remove this unused import 'java.util.Date'.(¸…¼ü8½¨Å®-
+bsquid:UselessImportCheck"2Remove this unused import 'javax.persistence.Lob'.(úÍá®üÿÿÿÿ8¸—£Å®-
+csquid:UselessImportCheck"8Remove this unused import 'javax.persistence.FetchType'.(‡¯¿8ûõ©È®-
+hsquid:UselessImportCheck"8Remove this unused import 'javax.persistence.JoinTable'.(ùö±µùÿÿÿÿ8ûõ©È®-
+ksquid:UselessImportCheck	";Remove this unused import 'javax.persistence.TemporalType'.(×ÓÛøÿÿÿÿ8¸—£Å®-
+bsquid:UselessImportCheck"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;8ûõ©È®-
+[squid:UselessImportCheck	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ûõ©È®-
+isquid:UselessImportCheck"9Remove this unused import 'javax.persistence.Enumerated'.(¡ùþßûÿÿÿÿ8Æì§Å®-
+isquid:UselessImportCheck	">Remove this unused import 'javax.validation.constraints.Size'.(›«´Ý8¸—£Å®-

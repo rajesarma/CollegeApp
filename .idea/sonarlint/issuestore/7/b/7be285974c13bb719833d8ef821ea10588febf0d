@@ -1,0 +1,14 @@
+
+Esquid:S1452©"&Remove usage of generic wildcard type.(Ü«ŒÈ8«¡£ë¯-
+ksquid:S1192o"MDefine a constant instead of duplicating this literal "employeeList" 9 times.(ó‘õ8ÒÑÑÈ¯-
+ssquid:S1192Ÿ"ODefine a constant instead of duplicating this literal "selectedDeptId" 5 times.(³š¸“ıÿÿÿÿ8«¡£ë¯-
+jsquid:S1192F"LDefine a constant instead of duplicating this literal "buttonValue" 6 times.(Í¶ò8ç¡¾È¯-
+lsquid:S1192["IDefine a constant instead of duplicating this literal "message" 10 times.(ãÔëÿÿÿÿÿ8¤ŸÉ®-
+‚squid:S1192 "^Define a constant instead of duplicating this literal "selectedJoiningAcademicYearId" 5 times.(™×Âÿÿÿÿÿ8ÒÑÑÈ¯-
+Isquid:S10686"+Remove this unused "message" private field.(Éè¯8¤ŸÉ®-
+esquid:S1192G"GDefine a constant instead of duplicating this literal "action" 6 times.(«î‚Á8ç¡¾È¯-
+~squid:S1192¡"ZDefine a constant instead of duplicating this literal "selectedJoiningSemesterId" 5 times.(œ°Å•ÿÿÿÿÿ8ô´¦ç¯-
+}squid:S18455"_Rename field "role" to prevent any misunderstanding/clash with field "Role" defined on line 41.(—Àöœ8¤ŸÉ®-
+lsquid:S1192D"NDefine a constant instead of duplicating this literal "employeeForm" 10 times.(öÖåÎ8§¤ìÊ®-
+jsquid:S1192D"LDefine a constant instead of duplicating this literal "addEmployee" 4 times.(öÖåÎ8ç¡¾È¯-
+msquid:S3008)"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Úƒ€8¤ŸÉ®-

@@ -1,0 +1,140 @@
+server:
+  port: 8040
+  error:
+    whitelabel:
+      enabled: false
+  servlet:
+    context-path: /
+  #  session:
+  #    cookie:
+  #      http-only: true # Also configured in configuration file
+  #      secure: true # Also configured in configuration file
+
+
+spring:
+
+  # IDENTITY ===============================================================================
+  application:
+    name: CollegeApp
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+      file-size-threshold: 2KB
+
+  #locale
+  mvc:
+    locale: en_US
+    locale-resolver: accept_header #fixed
+    #throw-exception-if-no-handler-found: false
+
+  # MVC ====================================================================================
+
+  # In this app we are using tiles
+  #mvc:
+  #  view:
+  #    prefix: WEB-INF/views/
+  #    suffix: .jsp
+
+  resources:
+    static-locations: classpath:/static/
+
+  messages:
+    basename: labels,validation_messages
+
+  # Mysql Configuraion ====================================
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/college?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: mytrah
+
+  # type: com.mysql.cj.jdbc.MysqlConnectionPoolDataSource
+  # type: com.zaxxer.hikari.HikariDataSource
+  #  hikari:
+  #    connection-init-sql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;"
+  #    idle-timeout: 45000
+  #    max-lifetime: 60000
+  #    maximum-pool-size: 10
+  #    minimum-idle: 3
+  #    transaction-isolation: "TRANSACTION_READ_COMMITTED"
+  #    validation-timeout: 5000
+  #    jdbc-url: jdbc:mysql://localhost:3306/college?useSSL=false
+  #               &allowPublicKeyRetrieval=true
+
+  #Set the SQL Dialect to “default” in your labels.properties to let Spring autodetect the different SQL Dialects of each datasource
+  jpa:
+    #show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    #database: mysql #default
+
+    # Two Data Source Information================================================================
+
+#app:
+#  datasource:
+#    first:
+#      url: jdbc:mysql://localhost:3306/college?useSSL=false&allowPublicKeyRetrieval=true
+#      username: root
+#      password: mytrah
+#      pool-size: 30
+
+#app:
+#  datasource:
+#    second:
+#      url: jdbc:mysql://localhost:3306/college?useSSL=false&allowPublicKeyRetrieval=true
+#      username: root
+#      password: mytrah
+#      pool-size: 30
+
+  #autoconfigure:
+  #  exclude: org.springframework.boot.autoconfigure.orm.jpa
+  #.HibernateJpaAutoConfiguration,org.springframework.boot.autoconfigure.jdbc
+  #.DataSourceTransactionManagerAutoConfiguration
+
+   #, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+  #autoconfigure:
+    #exclude: org.springframework.boot
+    #.autoconfigure.security.servlet.SecurityAutoConfiguration
+    #org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration,
+
+# LOGGING ================================================================================
+logging:
+  pattern:
+    console:  "%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
+    file:  "%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
+  level:
+    root:  INFO
+    in.education: INFO
+    in.education.college: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.data: INFO
+    org.springframework.security: INFO
+    org.springframework.integration.channel.DirectChannel: WARN
+    org.springframework.boot.web.servlet.FilterRegistrationBean: WARN
+    org.springframework.boot.web.servlet.ServletRegistrationBean: WARN
+    org.springframework.web.servlet.handler.SimpleUrlHandlerMapping: WARN
+    org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping: WARN
+    org.springframework.context.support.DefaultLifecycleProcessor: WARN
+    org.springframework.integration.endpoint.EventDrivenConsumer: WARN
+    org.springframework.integration.monitor.IntegrationMBeanExporter: WARN
+    org.springframework.jmx.export.annotation.AnnotationMBeanExporter: WARN
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: WARN # url mappings
+
+# hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+# hibernate.show_sql: true
+# hibernate.hbm2ddl.auto: create
+
+#mysql
+#  driver: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/college?useSSL=false&allowPublicKeyRetrieval=true
+#  username: root
+#  password: mytrah
+#debug: true

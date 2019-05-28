@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!--For Home Page-->
+    <definition name="homePageTemplate"
+                template="/WEB-INF/views/common/homePageTemplate.jsp">
+        <put-attribute name="body" value="body" />
+    </definition>
+
+    <!--For Home Page-->
+    <definition name="index" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <!--For Remaining Pages-->
+    <definition name="tilesTemplate" template="/WEB-INF/views/common/tilesTemplate.jsp">
+        <put-attribute name="menu" value="/WEB-INF/views/common/menu.jsp" />
+        <put-attribute name="body" value="body" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>
+
+    <!--Common-->
+    <definition name="home" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/home.jsp" />
+    </definition>
+
+    <definition name="test" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/test.jsp" />
+    </definition>
+
+    <definition name="accessDenied" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/accessDenied.jsp" />
+    </definition>
+
+    <definition name="sessionTimeout" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/sessionTimeout.jsp" />
+    </definition>
+
+    <definition name="error" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/error.jsp" />
+    </definition>
+
+    <definition name="404" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/404.jsp" />
+    </definition>
+
+    <!--Common-->
+
+    <definition name="addStudent" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/student/addStudent.jsp" />
+    </definition>
+
+    <definition name="studentList" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/student/studentList.jsp" />
+    </definition>
+
+    <definition name="searchStudent" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/student/searchStudent.jsp" />
+    </definition>
+
+    <definition name="studentAttendance" extends="tilesTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/studentAttendance/studentAttendance.jsp" />
+    </definition>
+
+    <definition name="user" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/user/user.jsp" />
+    </definition>
+
+    <definition name="changePassword" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/user/changePassword.jsp" />
+    </definition>
+
+    <definition name="usersList" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/user/usersList.jsp" />
+    </definition>
+
+    <definition name="roleServices" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/role/roleServices.jsp" />
+    </definition>
+
+    <definition name="addEmployee" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/employee/addEmployee.jsp" />
+    </definition>
+
+    <definition name="employeeList" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/employee/employeeList.jsp" />
+    </definition>
+
+    <definition name="searchEmployee" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/employee/searchEmployee.jsp" />
+    </definition>
+
+
+
+
+
+</tiles-definitions>

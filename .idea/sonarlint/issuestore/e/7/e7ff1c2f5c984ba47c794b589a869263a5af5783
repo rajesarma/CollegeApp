@@ -1,0 +1,18 @@
+
+msquid:S3008%"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Úƒ€8ûØÖÞ¨-
+isquid:CommentedOutCodeLinek"<This block of commented-out lines of code should be removed.(š««°8Õ —ß¨-
+psquid:S1192Ž"QDefine a constant instead of duplicating this literal "selectedBranchId" 5 times.(‰­Ò±8¿âƒˆ«-
+}squid:S18451"_Rename field "role" to prevent any misunderstanding/clash with field "Role" defined on line 37.(—Àöœ8ûØÖÞ¨-
+jsquid:S1192C"LDefine a constant instead of duplicating this literal "buttonValue" 6 times.(Í¶ò8˜ßÿª-
+osquid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(äŠÿøÿÿÿÿ8Õ®óð­-
+Esquid:S1452–"&Remove usage of generic wildcard type.(Ü«ŒÈ8Çø­Õ©-
+osquid:S1192A"LDefine a constant instead of duplicating this literal "studentDto" 10 times.(áÏ›áþÿÿÿÿ8ûØÖÞ¨-
+jsquid:S1192D"GDefine a constant instead of duplicating this literal "action" 6 times.(§®ÁÚúÿÿÿÿ8˜ßÿª-
+tsquid:S1192"PDefine a constant instead of duplicating this literal "selectedBatchId" 5 times.(»¿âÌÿÿÿÿÿ8Îø¨ý«-
+nsquid:S1192"ODefine a constant instead of duplicating this literal "selectedYearId" 5 times.(ÍñäÔ8¯“Ú§«-
+nsquid:S1192A"KDefine a constant instead of duplicating this literal "addStudent" 4 times.(áÏ›áþÿÿÿÿ8º‚ûÙ«-
+osquid:S1192u"LDefine a constant instead of duplicating this literal "studentList" 9 times.(¬‘ÒØùÿÿÿÿ8˜ßß¨-
+lsquid:S1192X"IDefine a constant instead of duplicating this literal "message" 10 times.(¼þéÖüÿÿÿÿ8ã¼‘ß¨-
+Isquid:S10682"+Remove this unused "message" private field.(Éè¯8×¤øÞ¨-
+osquid:CommentedOutCodeLineÌ"<This block of commented-out lines of code should be removed.(Þ€øŽûÿÿÿÿ8â´üÿ«-
+osquid:CommentedOutCodeLine½"<This block of commented-out lines of code should be removed.(¥Âè¹ÿÿÿÿÿ8â´üÿ«-
