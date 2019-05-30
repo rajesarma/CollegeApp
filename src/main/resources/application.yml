@@ -106,27 +106,31 @@ spring:
 
 # LOGGING ================================================================================
 logging:
+  file: C:\\logs\\CollegeApp-debug.log
+  config: classpath:logback.xml
+  #config: classpath:logback-file-only-appender.xml
+  #path:
   pattern:
-    console:  "%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
-    file:  "%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
+    console:  "%d{yyyy-MM-dd HH:mm:ss} %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
+    file:  "%d{yyyy-MM-dd HH:mm:ss} %-5level [%15.15thread] [%-35.35logger{35}] : %msg%n"
   level:
-    root:  INFO
+    root: INFO
     in.education: INFO
     in.education.college: INFO
     org.springframework: INFO
+    org.springframework.core: INFO
     org.springframework.web: INFO
     org.springframework.data: INFO
     org.springframework.security: INFO
-    org.springframework.integration.channel.DirectChannel: WARN
     org.springframework.boot.web.servlet.FilterRegistrationBean: WARN
     org.springframework.boot.web.servlet.ServletRegistrationBean: WARN
     org.springframework.web.servlet.handler.SimpleUrlHandlerMapping: WARN
     org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping: WARN
     org.springframework.context.support.DefaultLifecycleProcessor: WARN
-    org.springframework.integration.endpoint.EventDrivenConsumer: WARN
-    org.springframework.integration.monitor.IntegrationMBeanExporter: WARN
-    org.springframework.jmx.export.annotation.AnnotationMBeanExporter: WARN
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: WARN # url mappings
+    org.hibernate: INFO
+
+
 
 # hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 # hibernate.show_sql: true

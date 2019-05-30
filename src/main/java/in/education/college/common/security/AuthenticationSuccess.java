@@ -7,8 +7,11 @@ import in.education.college.model.User;
 import in.education.college.model.repository.RoleRepository;
 import in.education.college.user.UserService;
 import org.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
@@ -24,6 +27,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler {
+
+	private static final Logger log = LoggerFactory.getLogger(AuthenticationSuccess.class);
 
 	@Autowired
 	private RoleRepository roleRepository;
@@ -41,8 +46,11 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 //		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User) authentication.getPrincipal();
 
+		log.info("User logged in: " + user.getUsername() + " - " + request.getRemoteHost());
+
 		// Update the LastLogin of User
 		userService.registerSuccessfulLogin(user.getUserId());
+		session.setAttribute("username", user.getUsername());
 
 		// To get Role Names
 		/*Set<String> roles = authentication.getAuthorities().stream()

@@ -1,5 +1,7 @@
 package in.education.college.employee;
 
+import in.education.college.common.util.Constants.Conditions;
+import in.education.college.common.util.Constants.StrConstants;
 import in.education.college.converter.EmployeeConverter;
 import in.education.college.dto.EmployeeForm;
 import in.education.college.model.AcademicYear;
@@ -14,11 +16,14 @@ import in.education.college.model.repository.DepartmentRepository;
 import in.education.college.model.repository.EmployeeRepository;
 import in.education.college.model.repository.QualificationRepository;
 import in.education.college.model.repository.SemesterRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -38,28 +43,7 @@ public class EmployeeService {
 	private QualificationRepository qualificationRepository;
 	private EmployeeConverter employeeConverter;
 
-	@Autowired
-	EmployeeService(
-			final SemesterRepository semesterRepository,
-			final AcademicYearRepository academicYearRepository,
-			final EmployeeRepository employeeRepository,
-			final BloodGroupRepository bloodGroupRepository,
-			final DepartmentRepository departmentRepository,
-			final QualificationRepository qualificationRepository,
-			final EmployeeConverter employeeConverter) {
-		this.semesterRepository = semesterRepository;
-		this.academicYearRepository = academicYearRepository;
-		this.employeeRepository = employeeRepository;
-		this.bloodGroupRepository = bloodGroupRepository;
-		this.departmentRepository = departmentRepository;
-		this.qualificationRepository = qualificationRepository;
-		this.employeeConverter = employeeConverter;
-	}
-
-	private String empNo = "Emp No.";
-	private String mobileNo = "Mobile No.";
-	private String aadharNo = "Aadhar No.";
-	private String email = "Email";
+	private static final Logger log = LoggerFactory.getLogger(EmployeeService.class);
 
 	Map<Long,String> getDepartments() {
 
@@ -99,19 +83,25 @@ public class EmployeeService {
 						Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 	}
 
-	Optional<EmployeeForm> save(EmployeeForm employeeForm) {
+	Optional<EmployeeForm> save(HttpServletRequest request, EmployeeForm employeeForm) {
 
 		Employee employee = employeeConverter.convert(employeeForm);
 		Employee savedEmployee = employeeRepository.save(employee);
 
 		if(savedEmployee.getEmployeeId() > 0) {
+
+			log.info("<EMPLOYEE><EMPLOYEE:SAVE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<" + savedEmployee.getEmployeeId() +" : inserted>");
+
 			return Optional.of(employeeConverter.convert(savedEmployee));
 		}
 
 		return Optional.empty();
 	}
 
-	List<EmployeeForm> list(long deptId, long joiningAcademicYearId,
+	List<EmployeeForm> list(HttpServletRequest request, long deptId,
+			long joiningAcademicYearId,
 			long joiningSemesterId) {
 
 		List<Employee> employeesList = new ArrayList<>();
@@ -148,11 +138,16 @@ public class EmployeeService {
 			employeesList.forEach(employee -> employeeForms.add(employeeConverter.convert(employee)));
 		}
 
+		log.info("<EMPLOYEE><EMPLOYEE:LIST>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<Record count: " + employeesList.size() + ">");
+
 		return employeeForms;
 	}
 
 
-	List<EmployeeForm> listBySalaries(long deptId, long joiningAcademicYearId,
+	List<EmployeeForm> listBySalaries(HttpServletRequest request, long deptId,
+			long joiningAcademicYearId,
 			long joiningSemesterId, double salary, String condition) {
 
 		List<Employee> employeesList = new ArrayList<>();
@@ -161,7 +156,7 @@ public class EmployeeService {
 
 		// If salary not selected and other parameters selected
 		if((salary <= 0) && (deptId > 0 || joiningAcademicYearId > 0 || joiningSemesterId > 0) ) {
-			return list(deptId, joiningAcademicYearId, joiningSemesterId);
+			return list(request, deptId, joiningAcademicYearId, joiningSemesterId);
 		}
 
 		// If salary selected
@@ -170,7 +165,7 @@ public class EmployeeService {
 			// If salary selected and other parameters are also selected
 			if((deptId > 0 || joiningAcademicYearId > 0 || joiningSemesterId > 0)) {
 
-				empIds = list(deptId, joiningAcademicYearId, joiningSemesterId)
+				empIds = list(request, deptId, joiningAcademicYearId, joiningSemesterId)
 						.stream()
 						.map(EmployeeForm::getEmployeeId)
 						.collect(Collectors.toList());
@@ -183,27 +178,27 @@ public class EmployeeService {
 
 			switch (condition) {
 
-				case "<": {
+				case Conditions.LT : {
 					employeesList =
 							employeeRepository.findAllBySalaryLessThanAndEmployeeIdIsIn(salary, empIds);
 					break;
 				}
-				case "<=": {
+				case Conditions.LE : {
 					employeesList =
 							employeeRepository.findAllBySalaryLessThanEqualAndEmployeeIdIsIn(salary, empIds);
 					break;
 				}
-				case "=": {
+				case Conditions.EQ : {
 					employeesList =
 							employeeRepository.findAllBySalaryEqualsAndEmployeeIdIsIn(salary, empIds);
 					break;
 				}
-				case ">=": {
+				case Conditions.GE : {
 					employeesList =
 							employeeRepository.findAllBySalaryGreaterThanEqualAndEmployeeIdIsIn(salary, empIds);
 					break;
 				}
-				case ">": {
+				case Conditions.GT : {
 					employeesList =
 							employeeRepository.findAllBySalaryGreaterThanAndEmployeeIdIsIn(salary, empIds);
 					break;
@@ -216,22 +211,42 @@ public class EmployeeService {
 			employeesList.forEach(employee -> employeeForms.add(employeeConverter.convert(employee)));
 		}
 
+		log.info("<EMPLOYEE><EMPLOYEE:LIST>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<Record count: " + employeesList.size() + ">");
+
 		return employeeForms;
 	}
 
 	Optional<EmployeeForm> findByType(String type, String value) {
 
-		Optional<Employee> employeeOptional = null;
+		Optional<Employee> employeeOptional;
 
-		if(type.equalsIgnoreCase(empNo)) {
-			employeeOptional = employeeRepository.findByEmpNo(value);
+		switch(type) {
+			case StrConstants.EMP_NO : {
+				employeeOptional = employeeRepository.findByEmpNo(value);
+				break;
+			}
 
-		} else if(type.equalsIgnoreCase(email)) {
-			employeeOptional = employeeRepository.findFirstByEmail(value);
-		} else if(type.equalsIgnoreCase(aadharNo)) {
-			employeeOptional = employeeRepository.findFirstByAadharNo(value);
-		} else if(type.equalsIgnoreCase(mobileNo)) {
-			employeeOptional = employeeRepository.findFirstByMobile(value);
+			case StrConstants.AADHAR_NO : {
+				employeeOptional = employeeRepository.findFirstByAadharNo(value);
+				break;
+			}
+
+			case StrConstants.MOBILE_NO : {
+				employeeOptional = employeeRepository.findFirstByMobile(value);
+				break;
+			}
+
+			case StrConstants.EMAIL : {
+				employeeOptional = employeeRepository.findFirstByEmail(value);
+				break;
+			}
+
+			default : {
+				employeeOptional = Optional.empty();
+				break;
+			}
 		}
 
 		if(employeeOptional.isPresent()) {
@@ -250,7 +265,7 @@ public class EmployeeService {
 		return Optional.empty();
 	}
 
-	Optional<EmployeeForm> update(EmployeeForm employeeForm){
+	Optional<EmployeeForm> update(HttpServletRequest request, EmployeeForm employeeForm){
 
 		Employee employee = employeeConverter.convert(employeeForm);
 		Optional<Employee> employeeOptional = employeeRepository.findById(employee.getEmployeeId());
@@ -261,25 +276,39 @@ public class EmployeeService {
 			Employee savedEmployee = employeeRepository.save(toSaveEmployee);
 
 			if(employeeRepository.existsById(savedEmployee.getEmployeeId())) {
+
+				log.info("<EMPLOYEE><EMPLOYEE:UPDATE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<" + savedEmployee.getEmployeeId() +" : updated>");
+
 				return Optional.of(employeeConverter.convert(savedEmployee));
 			}
 		}
 		return Optional.empty();
 	}
 
-	Optional<EmployeeForm> delete(EmployeeForm employeeForm){
+	Optional<EmployeeForm> delete(HttpServletRequest request, EmployeeForm employeeForm){
 		Employee employee = employeeConverter.convert(employeeForm);
 		employeeRepository.deleteById(employee.getEmployeeId());
 		Optional<Employee> employeeOptional = employeeRepository.findById(employee.getEmployeeId());
 
 		if(employeeOptional.isPresent()) {
+
+			log.info("<EMPLOYEE><EMPLOYEE:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<" + employeeOptional.get().getName() +" : not deleted>");
+
 			return Optional.of(employeeConverter.convert(employeeOptional.get()));
 		}
+
+		log.info("<EMPLOYEE><EMPLOYEE:DELETE>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<" + employeeForm.getName() +" : deleted>");
 
 		return Optional.empty();
 	}
 
-	Pair search(EmployeeForm employeeForm) {
+	Pair search(HttpServletRequest request, EmployeeForm employeeForm) {
 
 		String message = "";
 
@@ -290,7 +319,7 @@ public class EmployeeService {
 
 		if(employee.getName().isEmpty() && !employee.getEmpNo().isEmpty()) {
 
-			Optional<EmployeeForm> employeeOptional = findByType(empNo,
+			Optional<EmployeeForm> employeeOptional = findByType(StrConstants.EMP_NO,
 					employee.getEmpNo());
 
 			if(employeeOptional.isPresent()) {
@@ -323,6 +352,45 @@ public class EmployeeService {
 			message = message + " No records found based on entered data.";
 		}
 
+		log.info("<EMPLOYEE><EMPLOYEE:SEARCH>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<" + message +" >");
+
 		return Pair.of(message, employeeForms);
+	}
+
+	@Autowired
+	public void setAcademicYearRepository(AcademicYearRepository academicYearRepository) {
+		this.academicYearRepository = academicYearRepository;
+	}
+
+	@Autowired
+	public void setSemesterRepository(SemesterRepository semesterRepository) {
+		this.semesterRepository = semesterRepository;
+	}
+
+	@Autowired
+	public void setEmployeeRepository(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
+
+	@Autowired
+	public void setBloodGroupRepository(BloodGroupRepository bloodGroupRepository) {
+		this.bloodGroupRepository = bloodGroupRepository;
+	}
+
+	@Autowired
+	public void setDepartmentRepository(DepartmentRepository departmentRepository) {
+		this.departmentRepository = departmentRepository;
+	}
+
+	@Autowired
+	public void setQualificationRepository(QualificationRepository qualificationRepository) {
+		this.qualificationRepository = qualificationRepository;
+	}
+
+	@Autowired
+	public void setEmployeeConverter(EmployeeConverter employeeConverter) {
+		this.employeeConverter = employeeConverter;
 	}
 }

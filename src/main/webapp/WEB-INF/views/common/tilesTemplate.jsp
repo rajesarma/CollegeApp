@@ -63,6 +63,8 @@
 	<link href="<c:url value="${pageContext.request.contextPath}/css/style.css" />" rel="stylesheet">
 	<link href="<c:url value="${pageContext.request.contextPath}/color/default.css" />" rel="stylesheet">
 
+	<link href="<c:url value="${pageContext.request.contextPath}/css/sweetalert.min.css" />" rel="stylesheet">
+
 	<script src="<c:url
 	value="${pageContext.request.contextPath}/webjars/jquery/1.8.2/jquery.min.js" />"></script>
 	<script src="<c:url
@@ -76,6 +78,12 @@
 
 	<script
 			src="<c:url value="${pageContext.request.contextPath}/js/form_validations.js" />"></script>
+
+	<script
+			src="<c:url value="${pageContext.request.contextPath}/js/date_validations.js"/>"></script>
+
+	<script
+			src="<c:url value="${pageContext.request.contextPath}/js/sweetalert.min.js"/>"></script>
 
 	<link rel="stylesheet" type="text/css"  href="<c:url
 	value="${pageContext.request.contextPath}/css/custom/dataTables.jqueryui.min.css" />" />

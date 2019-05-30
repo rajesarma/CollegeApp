@@ -1,13 +1,10 @@
 
-osquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(˘©’”¯ˇˇˇˇ8ââ‡≈Ø-
-osquid:CommentedOutCodeLineÊ"<This block of commented-out lines of code should be removed.(ãëç¶˙ˇˇˇˇ8ââ‡≈Ø-
-osquid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(˘©’”¯ˇˇˇˇ8˜˛ˆ®¨-
-isquid:CommentedOutCodeLine≠"<This block of commented-out lines of code should be removed.(È∆ﬁB8ââ‡≈Ø-
-jsquid:CommentedOutCodeLine∏"<This block of commented-out lines of code should be removed.(ò∞êÅ8†’π∆Ø-
-esquid:S00107,"AConstructor has 8 parameters, which is greater than 7 authorized.(ßú’õ˛ˇˇˇˇ8ß©ÎÃ≠-
-lsquid:S2259À"MA "NullPointerException" could be thrown; "studentOptional" is nullable here.(‡π¡Ω8˙…„≈Ø-
-psquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(˝ûŸò8«˜å§¨-
-jsquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(º¡Ë≠8Üâæ∆Ø-
-osquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(⁄ﬁß∂˙ˇˇˇˇ8ââ‡≈Ø-
-Ysquid:S1068$"6Remove this unused "semesterRepository" private field.(–π˙ù˘ˇˇˇˇ8»›ı®¨-
-osquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(˘©’”¯ˇˇˇˇ8ââ‡≈Ø-
+jsquid:S1192j"GDefine a constant instead of duplicating this literal "<User:" 6 times.(—ìóÜ˚ˇˇˇˇ8Ø«Ãê∞-
+Qsquid:S1199ª"-Extract this nested code block into a method.(Œó≠ä˛ˇˇˇˇ8⁄å£ì∞-
+Qsquid:S1199∂"-Extract this nested code block into a method.(≤•√≤˘ˇˇˇˇ8⁄å£ì∞-
+Qsquid:S1199¨"-Extract this nested code block into a method.(Ê–í•˝ˇˇˇˇ8⁄å£ì∞-
+Qsquid:S1199±"-Extract this nested code block into a method.(ÔÄ≈ö¸ˇˇˇˇ8⁄å£ì∞-
+Äsquid:S2629õ"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(°ŸÔΩ¸ˇˇˇˇ8‘»Ãí∞-
+Vsquid:S2629©"7Use the built-in formatting to construct this argument.(Ó§êÔ8ÀË£ï∞-
+isquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(èÒÍî8£ÃÅì∞-
+Lsquid:S1199ß"-Extract this nested code block into a method.(Ë—èÙ8Ìüˇí∞-

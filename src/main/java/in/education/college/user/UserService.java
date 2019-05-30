@@ -1,16 +1,20 @@
 package in.education.college.user;
 
+import in.education.college.common.util.Constants.StrConstants;
 import in.education.college.converter.UserConverter;
 import in.education.college.dto.UserDto;
 import in.education.college.model.Role;
 import in.education.college.model.User;
 import in.education.college.model.repository.RoleRepository;
 import in.education.college.model.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -33,23 +37,33 @@ public class UserService {
 		this.roleRepository = roleRepository;
 	}
 
+	private static final Logger log = LoggerFactory.getLogger(UserService.class);
+
 	Map<Long,String> getRoles() {
 		return StreamSupport.stream(roleRepository.findAll().spliterator(), false)
 				.collect(Collectors.toMap(Role::getRoleId, Role::getRoleName));
 	}
 
-	Optional<UserDto> save(UserDto userDto) {
+	Optional<UserDto> save(HttpServletRequest request, UserDto userDto) {
 
 		User user = UserConverter.convert(userDto);
 
 		Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
 
 		if(existingUser.isPresent()) {
+			log.info("<USER><USER:SAVE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<" + existingUser.get().getUsername() +" : already exists>");
+
 			return Optional.empty();
 		}
 
 		user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 		User savedUser = userRepository.save(user);
+
+		log.info("<USER><USER:SAVE>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<" + savedUser.getUsername() +" : saved>");
 
 		return Optional.of(UserConverter.convert(savedUser));
 	}
@@ -61,11 +75,8 @@ public class UserService {
 
 		List<UserDto> userDtos = new ArrayList<>();
 
-		users.stream().forEach(user -> userDtos.add(UserConverter.convert(user)));
+		users.forEach(user -> userDtos.add(UserConverter.convert(user)));
 
-		/*for (User user : users) {
-			userDtos.add(UserConverter.convert(user));
-		}*/
 		return userDtos;
 	}
 
@@ -81,14 +92,19 @@ public class UserService {
 		return Optional.empty();
 	}
 
-	Optional<UserDto> changePassword(String username, String password,
-			String newPassword) {
+	Optional<UserDto> changePassword(HttpServletRequest request, String username,
+			String password, String newPassword) {
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		Optional<User> userOptional =
 				userRepository.findByUsername(username.toLowerCase(Locale.US));
 
 		if(!userOptional.isPresent()) {
+
+			log.info("<USER><USER:CHANGE_PASSWORD>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<" + username +" : not found>");
+
 			return Optional.empty();
 		} else {
 			User user = userOptional.get();
@@ -98,14 +114,23 @@ public class UserService {
 				user.setLastPasswordChange(new Date());
 				User savedUser = userRepository.save(user);
 
+				log.info("<USER><USER:CHANGE_PASSWORD>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<" + userOptional.get().getUsername() +" : Password updated>");
+
 				return Optional.of(UserConverter.convert(savedUser));
 			} else {
+
+				log.info("<USER><USER:CHANGE_PASSWORD>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<" + userOptional.get().getUsername() +" : User credentials " +
+						"does not match>");
 				return Optional.empty();
 			}
 		}
 	}
 
-	Optional<UserDto> delete(UserDto userDto) {
+	Optional<UserDto> delete(HttpServletRequest request, UserDto userDto) {
 
 		User user = UserConverter.convert(userDto);
 
@@ -113,13 +138,20 @@ public class UserService {
 		Optional<User> userOptional = userRepository.findById(user.getUserId());
 
 		if(userOptional.isPresent()) {
+			log.info("<USER><USER:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<" + userOptional.get().getUsername() +" : not deleted>");
 			return Optional.of(UserConverter.convert(userOptional.get()));
-		} else {
-			return Optional.empty();
 		}
+
+		log.info("<USER><USER:DELETE>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<" + userDto.getUsername() +" : not deleted>");
+
+		return Optional.empty();
 	}
 
-	Optional<UserDto> update(UserDto userDto) {
+	Optional<UserDto> update(HttpServletRequest request, UserDto userDto) {
 		User user = UserConverter.convert(userDto);
 
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -138,7 +170,11 @@ public class UserService {
 
 			User savedUser = userRepository.save(toUpdateUser);
 
-			if(savedUser.getUserId() > 0 ) {
+			if(userRepository.existsById(savedUser.getUserId())) {
+				log.info("<USER><USER:UPDATE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<" + savedUser.getUserId() +" : updated>");
+
 				return Optional.of(UserConverter.convert(savedUser));
 			}
 

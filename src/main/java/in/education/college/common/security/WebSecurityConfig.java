@@ -1,5 +1,6 @@
 package in.education.college.common.security;
 
+import in.education.college.common.util.Constants.Roles;
 import in.education.college.common.util.Constants.Urls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -64,11 +65,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/js/**/**").permitAll()
 				.antMatchers("/webjars/**").permitAll()
 
-				.antMatchers(getUrlPattern(Urls.ADMIN)).access(hasRole(Urls.ADMIN_ROLE))
-				.antMatchers(getUrlPattern(Urls.FACULTY)).access(hasRole(Urls.FACULTY_ROLE, Urls.ADMIN_ROLE))
-				.antMatchers(getUrlPattern(Urls.STUDENT)).access(hasRole(Urls.STUDENT_ROLE, Urls.ADMIN_ROLE))
-				.antMatchers(getUrlPattern(Urls.MANAGEMENT)).access(hasRole(Urls.MANAGEMENT_ROLE, Urls.ADMIN_ROLE))
-				.antMatchers(getUrlPattern(Urls.SUPERVIZOR)).access(hasRole(Urls.SUPERVIZOR_ROLE, Urls.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.ADMIN)).access(hasRole(Roles.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.FACULTY)).access(hasRole(Roles.FACULTY_ROLE, Roles.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.STUDENT)).access(hasRole(Roles.STUDENT_ROLE, Roles.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.MANAGEMENT)).access(hasRole(Roles.MANAGEMENT_ROLE, Roles.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.SUPERVIZOR)).access(hasRole(Roles.SUPERVIZOR_ROLE, Roles.ADMIN_ROLE))
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()

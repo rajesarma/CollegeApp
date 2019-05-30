@@ -19,8 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
 
-//	public static ArrayList<String> serviceUrls;
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
@@ -49,8 +47,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		CustomUserDetails(User user) {
 			super(user);
 		}
-
-//		private ArrayList<String> serviceUrls = new ArrayList<>();
 
 		@Override
 		public Collection<? extends GrantedAuthority> getAuthorities() {

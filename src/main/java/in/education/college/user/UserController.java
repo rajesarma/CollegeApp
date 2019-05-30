@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -64,13 +65,13 @@ public class UserController {
 
 	@PostMapping("/admin/user/add")
 	public ModelAndView save(@ModelAttribute UserDto userDto,
-			BindingResult bindingResult) { // @Valid
+			BindingResult bindingResult, HttpServletRequest request) { // @Valid
 
 		new UserValidator().validate(userDto, bindingResult);
 		ModelAndView mav = new ModelAndView("user", userDataDto, userDto);
 
 		if(!bindingResult.hasErrors()) {
-			Optional<UserDto> savedUserDto = userService.save(userDto);
+			Optional<UserDto> savedUserDto = userService.save(request, userDto);
 
 			if (!savedUserDto.isPresent()) {
 				message = "User already existed";
@@ -109,7 +110,7 @@ public class UserController {
 
 	@PostMapping("/changePassword")
 	public ModelAndView change(@ModelAttribute UserDto userDto,
-			@RequestParam String newPassword) {
+			@RequestParam String newPassword, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("changePassword", userDataDto, userDto);
 		mav.addObject(buttonValue, change );
@@ -122,7 +123,7 @@ public class UserController {
 					(User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 			Optional<UserDto> userOptional =
-					userService.changePassword(LoggedInUser.getUsername(),
+					userService.changePassword(request, LoggedInUser.getUsername(),
 							userDto.getPassword(), newPassword);
 
 			if(userOptional.isPresent() && userOptional.get().getUserId() > 0) {
@@ -180,10 +181,11 @@ public class UserController {
 	}
 
 	@PostMapping("/admin/user/delete")
-	public ModelAndView delete(@ModelAttribute("userDto") UserDto userDto)  {
+	public ModelAndView delete(@ModelAttribute("userDto") UserDto userDto,
+			HttpServletRequest request)  {
 
 		ModelAndView mav = new ModelAndView(usersList, userDataDto, userDto);
-		Optional<UserDto> userOptional = userService.delete(userDto);
+		Optional<UserDto> userOptional = userService.delete(request, userDto);
 
 		if(!userOptional.isPresent()) {
 			message = "User Information deleted successfully";
@@ -205,7 +207,7 @@ public class UserController {
 
 	@PostMapping("/admin/user/update")
 	public ModelAndView update(@ModelAttribute UserDto userDto,
-			BindingResult bindingResult) { // @Valid
+			BindingResult bindingResult, HttpServletRequest request) { // @Valid
 
 		new UserValidator().validate(userDto, bindingResult);
 
@@ -222,7 +224,7 @@ public class UserController {
 			return mav;
 
 		} else {
-			Optional<UserDto> userOptional = userService.update(userDto);
+			Optional<UserDto> userOptional = userService.update(request, userDto);
 
 			if (userOptional.isPresent()) {
 				message = "User Information updated successfully";

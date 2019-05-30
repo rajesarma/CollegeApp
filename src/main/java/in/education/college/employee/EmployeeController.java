@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.net.ssl.HttpsURLConnection;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -77,7 +79,7 @@ public class EmployeeController {
 
 	@PostMapping("/employee/add")
 	public ModelAndView save(@ModelAttribute("employeeForm") EmployeeForm employeeForm,
-			BindingResult bindingResult) { //@Valid
+			BindingResult bindingResult, HttpServletRequest request) { //@Valid
 
 		ModelAndView mav = new ModelAndView("addEmployee", "employeeForm", employeeForm);
 		getData(mav);
@@ -92,7 +94,8 @@ public class EmployeeController {
 			return mav;
 		}
 
-		Optional<EmployeeForm> employeeFormOptional = employeeService.save(employeeForm);
+		Optional<EmployeeForm> employeeFormOptional = employeeService.save(request,
+				employeeForm);
 
 		if(!employeeFormOptional.isPresent()) {
 			mav.addObject("message", "Problem in Saving Employee Data");
@@ -129,7 +132,7 @@ public class EmployeeController {
 
 	@PostMapping("/employee/list")
 	public ModelAndView list(@ModelAttribute("employeeForm") EmployeeForm employeeForm,
-			@RequestParam String conditionString) {
+			@RequestParam String conditionString, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("employeeList");
 		getData(mav);
@@ -144,7 +147,8 @@ public class EmployeeController {
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
 		mav.addObject(role, Role);
 
-		List employeesList = employeeService.listBySalaries(employeeForm.getDeptId(),
+		List employeesList = employeeService.listBySalaries(request,
+				employeeForm.getDeptId(),
 				employeeForm.getJoiningAcademicYearId(),
 				employeeForm.getJoiningSemesterId(),
 				employeeForm.getSalary(),
@@ -215,7 +219,7 @@ public class EmployeeController {
 
 	@PostMapping("/employee/update")
 	public ModelAndView update(@ModelAttribute("employeeForm") EmployeeForm employeeForm,
-			BindingResult bindingResult) {
+			BindingResult bindingResult, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("employeeList", "employeeForm", employeeForm);
 		getData(mav);
@@ -239,12 +243,14 @@ public class EmployeeController {
 			return mav;
 		}
 
-		Optional<EmployeeForm> employeeFormOptional = employeeService.update(employeeForm);
+		Optional<EmployeeForm> employeeFormOptional =
+				employeeService.update(request, employeeForm);
 
 		if(employeeFormOptional.isPresent()) {
 			EmployeeForm updatedEmployee = employeeFormOptional.get();
 
-			mav.addObject("employeeList", employeeService.list(updatedEmployee.getDeptId(),
+			mav.addObject("employeeList", employeeService.list(request,
+					updatedEmployee.getDeptId(),
 					updatedEmployee.getJoiningAcademicYearId(),
 					updatedEmployee.getJoiningSemesterId()));
 
@@ -256,7 +262,8 @@ public class EmployeeController {
 			return mav;
 		}
 
-		mav.addObject("employeeList", employeeService.list(employeeForm.getDeptId(),
+		mav.addObject("employeeList", employeeService.list(request,
+				employeeForm.getDeptId(),
 				employeeForm.getJoiningAcademicYearId(),
 				employeeForm.getJoiningSemesterId()));
 
@@ -266,7 +273,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/employee/delete")
-	public ModelAndView delete(@ModelAttribute("employeeForm") EmployeeForm employeeForm) {
+	public ModelAndView delete(@ModelAttribute("employeeForm") EmployeeForm employeeForm, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("employeeList", "employeeForm", employeeForm);
 		getData(mav);
@@ -279,7 +286,8 @@ public class EmployeeController {
 		mav.addObject("selectedJoiningAcademicYearId", employeeForm.getJoiningAcademicYearId());
 		mav.addObject("selectedJoiningSemesterId", employeeForm.getJoiningSemesterId());
 
-		Optional<EmployeeForm> employeeFormOptional = employeeService.delete(employeeForm);
+		Optional<EmployeeForm> employeeFormOptional = employeeService.delete(request,
+				employeeForm);
 
 		if(!employeeFormOptional.isPresent()) {
 			mav.addObject("message", "Employee Information deleted successfully");
@@ -287,7 +295,8 @@ public class EmployeeController {
 			mav.addObject("message", "Problem in deletion");
 		}
 
-		mav.addObject("employeeList", employeeService.list(employeeForm.getJoiningAcademicYearId(),
+		mav.addObject("employeeList", employeeService.list(request,
+				employeeForm.getJoiningAcademicYearId(),
 				employeeForm.getDeptId(),
 				employeeForm.getJoiningSemesterId()));
 
@@ -302,12 +311,12 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/searchEmployee")
-	public ModelAndView search(@ModelAttribute("employeeForm") EmployeeForm employeeForm) {
+	public ModelAndView search(@ModelAttribute("employeeForm") EmployeeForm employeeForm, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("searchEmployee", "employeeForm",
 				new EmployeeForm());
 
-		Pair<String, List> employeeData = employeeService.search(employeeForm);
+		Pair<String, List> employeeData = employeeService.search(request, employeeForm);
 
 		mav.addObject("message", employeeData.getFirst());
 		mav.addObject("employeeList", employeeData.getSecond());

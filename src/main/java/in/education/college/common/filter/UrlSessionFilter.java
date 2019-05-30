@@ -48,17 +48,17 @@ public class UrlSessionFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 
 		HttpServletResponseWrapper wrappedResponse = new HttpServletResponseWrapper(httpResponse) {
-			public String encodeRedirectUrl(String url) {
-				return url;
-			}
+//			public String encodeRedirectUrl(String url) {
+//				return url;
+//			}
 
 			public String encodeRedirectURL(String url) {
 				return url;
 			}
 
-			public String encodeUrl(String url) {
-				return url;
-			}
+//			public String encodeUrl(String url) {
+//				return url;
+//			}
 
 			public String encodeURL(String url) {
 				return url;

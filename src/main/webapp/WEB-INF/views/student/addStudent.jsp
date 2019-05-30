@@ -241,7 +241,7 @@
 								<form:input path="rollNo" name="rollNo" id="rollNo"
 											cssClass="span3" maxlength="10"
 											onkeypress="javascript:return isAlphaNumeric(event,this.value);"
-											onChange="checkData('RollNo.', this, this.id)" />
+											onChange="checkData('rollNo.', this, this.id)" />
 								<span class="help-block">
 									<form:errors path="rollNo" cssClass="error" />
 								</span>
@@ -256,7 +256,7 @@
 								<form:input path="email" name="email" id="email"
 											maxlength="50"
 											cssClass="span3" onblur="checkEmail(this);"
-											onChange="checkData('Email', this, this.id)"/>
+											onChange="checkData('email', this, this.id)"/>
 								<span class="help-block">
 									<form:errors path="email" cssClass="error" />
 								</span>
@@ -283,7 +283,8 @@
 							</label>
 							<div class="controls">
 								<form:input path="dob" name="dob" id="dob" maxlength="10"
-											cssClass="span2"/>
+											cssClass="span2"
+											onkeyup="buildDate(this)" onblur="isValidDate(this);"/>
 								<span class="help-inline date-format">
 									<spring:message code="dateFormat"/>
 								</span>
@@ -299,7 +300,8 @@
 							</label>
 							<div class="controls">
 								<form:input path="doj" name="doj" id="doj" maxlength="10"
-											cssClass="span2"/>
+											cssClass="span2"
+											onkeyup="buildDate(this)" onblur="isValidDate(this);"/>
 								<span class="help-inline date-format">
 									<spring:message code="dateFormat"/>
 								</span>

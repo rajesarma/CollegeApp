@@ -1,8 +1,12 @@
 package in.education.college.student;
 
+import in.education.college.common.util.Constants.StrConstants;
+import in.education.college.common.util.Util;
 import in.education.college.dto.StudentDto;
 import in.education.college.validator.StudentValidator;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.util.Pair;
@@ -17,9 +21,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
 
 @Controller
 @RequestMapping(value="/super")
@@ -74,7 +80,7 @@ public class StudentController {
 
 	@PostMapping("/student/add")
 	public ModelAndView save(@ModelAttribute("studentDto") StudentDto studentDto,
-			BindingResult bindingResult) { //@Valid
+			BindingResult bindingResult, HttpServletRequest request) { //@Valid
 
 		ModelAndView mav = new ModelAndView("addStudent", "studentDto", studentDto);
 		getData(mav);
@@ -89,7 +95,8 @@ public class StudentController {
 			return mav;
 		}
 
-		Optional<StudentDto> studentDtoOptional = studentService.save(studentDto);
+		Optional<StudentDto> studentDtoOptional = studentService.save(request,
+				studentDto);
 
 		if(!studentDtoOptional.isPresent()) {
 			mav.addObject("message", "Problem in Saving Student Data");
@@ -123,13 +130,13 @@ public class StudentController {
 	}
 
 	@PostMapping("/student/list")
-	public ModelAndView list(@ModelAttribute("studentDto") StudentDto studentDto) {
+	public ModelAndView list(@ModelAttribute("studentDto") StudentDto studentDto, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("studentList");
 		getData(mav);
 		mav.addObject(role, Role);
 
-		List studentsList = studentService.list(studentDto.getBranchId(),
+		List studentsList = studentService.list(request, studentDto.getBranchId(),
 				studentDto.getBatchId(), studentDto.getJoiningYearId());
 
 		if(studentsList.isEmpty()) {
@@ -223,7 +230,7 @@ public class StudentController {
 
 	@PostMapping("/student/update")
 	public ModelAndView update(@ModelAttribute("studentDto") StudentDto studentDto,
-			BindingResult bindingResult) {
+			BindingResult bindingResult, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("studentList", "studentDto", studentDto);
 		getData(mav);
@@ -247,12 +254,13 @@ public class StudentController {
 			return mav;
 		}
 
-		Optional<StudentDto> studentDtoOptional = studentService.update(studentDto);
+		Optional<StudentDto> studentDtoOptional = studentService.update(request, studentDto);
 
 		if(studentDtoOptional.isPresent()) {
 			StudentDto updatedStudent = studentDtoOptional.get();
 
-			mav.addObject("studentList", studentService.list(updatedStudent.getBranchId(),
+			mav.addObject("studentList", studentService.list(request,
+					updatedStudent.getBranchId(),
 					updatedStudent.getBatchId(), updatedStudent.getJoiningYearId()));
 
 			mav.addObject("selectedBatchId", updatedStudent.getBatchId());
@@ -263,7 +271,8 @@ public class StudentController {
 			return mav;
 		}
 
-		mav.addObject("studentList", studentService.list(studentDto.getBranchId(),
+		mav.addObject("studentList", studentService.list(request,
+				studentDto.getBranchId(),
 				studentDto.getBatchId(), studentDto.getJoiningYearId()));
 
 		mav.addObject("message", "Problem in Updating Student Data");
@@ -272,7 +281,8 @@ public class StudentController {
 	}
 
 	@PostMapping("/student/delete")
-	public ModelAndView delete(@ModelAttribute("studentDto") StudentDto studentDto) {
+	public ModelAndView delete(@ModelAttribute("studentDto") StudentDto studentDto,
+			HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("studentList", "studentDto", studentDto);
 		getData(mav);
@@ -285,7 +295,8 @@ public class StudentController {
 		mav.addObject("selectedBranchId", studentDto.getBranchId());
 		mav.addObject("selectedYearId", studentDto.getJoiningYearId());
 
-		Optional<StudentDto> studentDtoOptional = studentService.delete(studentDto);
+		Optional<StudentDto> studentDtoOptional = studentService.delete(request,
+				studentDto);
 
 		if(!studentDtoOptional.isPresent()) {
 			mav.addObject("message", "Student Information deleted successfully");
@@ -293,8 +304,10 @@ public class StudentController {
 			mav.addObject("message", "Problem in deletion");
 		}
 
-		mav.addObject("studentList", studentService.list(studentDto.getBranchId(),
-				studentDto.getBatchId(), studentDto.getJoiningYearId()));
+		mav.addObject("studentList", studentService.list(request,
+				studentDto.getBranchId(),
+				studentDto.getBatchId(),
+				studentDto.getJoiningYearId()));
 
 		return mav;
 	}
@@ -307,12 +320,13 @@ public class StudentController {
 	}
 
 	@PostMapping("/searchStudent")
-	public ModelAndView search(@ModelAttribute("studentDto") StudentDto studentDto) {
+	public ModelAndView search(@ModelAttribute("studentDto") StudentDto studentDto,
+			HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("searchStudent", "studentDto",
 				new StudentDto());
 
-		Pair<String, List> studentData = studentService.search(studentDto);
+		Pair<String, List> studentData = studentService.search(request, studentDto);
 
 //		if(studentData.getSecond().isEmpty()) {
 //			mav.addObject("message", "No records found based on your selection");

@@ -166,7 +166,7 @@
 								<form:input path="mobile" name="mobile" id="mobile"
 											cssClass="span3" maxlength="10"
 											onkeyup="intOnly(this)"
-											onChange="checkData('Mobile No.', this, this.id)"/>
+											onChange="checkData('mobileNo.', this, this.id)"/>
 								<span class="help-block">
 									<form:errors path="mobile" cssClass="error" />
 								</span>
@@ -181,7 +181,7 @@
 								<form:input path="aadharNo" name="aadharNo"
 											id="aadharNo" maxlength="12"
 											cssClass="span3" onkeyup="intOnly(this)"
-											onChange="checkData('Aadhar No.', this, this.id)"/>
+											onChange="checkData('aadharNo.', this, this.id)"/>
 								<span class="help-block">
 									<form:errors path="aadharNo" cssClass="error" />
 								</span>
@@ -196,7 +196,7 @@
 								<form:input path="empNo" name="empNo" id="empNo"
 											cssClass="span3" maxlength="10"
 											onkeypress="javascript:return isAlphaNumeric(event,this.value);"
-											onChange="checkData('Emp No.', this, this.id)" />
+											onChange="checkData('empNo.', this, this.id)" />
 								<span class="help-block">
 									<form:errors path="empNo" cssClass="error" />
 								</span>
@@ -211,7 +211,7 @@
 								<form:input path="email" name="email" id="email"
 											maxlength="50"
 											cssClass="span3" onblur="checkEmail(this);"
-											onChange="checkData('Email', this, this.id)"/>
+											onChange="checkData('email', this, this.id)"/>
 								<span class="help-block">
 									<form:errors path="email" cssClass="error" />
 								</span>
@@ -224,7 +224,8 @@
 							</label>
 							<div class="controls">
 								<form:input path="dob" name="dob" id="dob" maxlength="10"
-											cssClass="span2"/>
+											cssClass="span2"
+											onkeyup="buildDate(this)" onblur="isValidDate(this);"/>
 								<span class="help-inline date-format">
 									<spring:message code="dateFormat"/>
 								</span>
@@ -240,7 +241,8 @@
 							</label>
 							<div class="controls">
 								<form:input path="doj" name="doj" id="doj" maxlength="10"
-											cssClass="span2"/>
+											cssClass="span2"
+											onkeyup="buildDate(this)" onblur="isValidDate(this);"/>
 								<span class="help-inline date-format">
 									<spring:message code="dateFormat"/>
 								</span>

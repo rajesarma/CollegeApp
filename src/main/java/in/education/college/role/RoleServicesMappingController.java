@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,12 +81,14 @@ public class RoleServicesMappingController {
 	}
 
 	@PostMapping("/roleServices")
-	public ModelAndView mapRoleServices(@ModelAttribute("role") Role role) {
+	public ModelAndView mapRoleServices(@ModelAttribute("role") Role role,
+			HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("roleServices", "role", role);
 		loadDbData(mav);
 
-		Optional<Role> roleOptional = roleServicesMappingService.updateServices(role);
+		Optional<Role> roleOptional = roleServicesMappingService.updateServices(request
+				, role);
 
 		if(roleOptional.isPresent()) {
 			role = roleOptional.get();

@@ -1,14 +1,15 @@
 
-`squid:S1854P"=Remove this useless assignment to local variable "services1".(°ÞÇ¿ÿÿÿÿÿ8ôñ¤Û©-
-gsquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(˜Ñ°Îûÿÿÿÿ
-[squid:S2441s"?Make "JSONArray" serializable or don't store it in the session.(°Ã–„ùÿÿÿÿ
-gsquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(‘¦þ·ûÿÿÿÿ
-bsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(é¶®¡
-Qsquid:S1481P".Remove this unused "services1" local variable.(°ÞÇ¿ÿÿÿÿÿ8ôñ¤Û©-
-asquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(ùÚÛ[
-bsquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(°â‡€
-bsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(•ò¾©
-bsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(÷Öœõ
-bsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(Í‰‡¢
-isquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(êŸÁÍ8ôñ¤Û©-
-gsquid:CommentedOutCodeLine|"<This block of commented-out lines of code should be removed.(ˆÕŽìüÿÿÿÿ
+[squid:S2441{"?Make "JSONArray" serializable or don't store it in the session.(°Ã–„ùÿÿÿÿ
+dsquid:S34571"AFormat specifiers should be used instead of string concatenation.(À´Ò»ùÿÿÿÿ8òÄÞ’°-
+bsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(÷Öœõ
+bsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(°â‡€
+`squid:S1854X"=Remove this useless assignment to local variable "services1".(°ÞÇ¿ÿÿÿÿÿ8ôñ¤Û©-
+gsquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(‘¦þ·ûÿÿÿÿ
+bsquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(é¶®¡
+gsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(˜Ñ°Îûÿÿÿÿ
+bsquid:CommentedOutCodeLine~"<This block of commented-out lines of code should be removed.(Í‰‡¢
+asquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(ùÚÛ[
+Qsquid:S1481X".Remove this unused "services1" local variable.(°ÞÇ¿ÿÿÿÿÿ8ôñ¤Û©-
+hsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(ˆÕŽìüÿÿÿÿ
+isquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(êŸÁÍ8ôñ¤Û©-
+bsquid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(•ò¾©
