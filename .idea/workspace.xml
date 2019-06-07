@@ -4,64 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/in/education/college/student/StudentJdbcRepository.java" line="56" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2392b5a-070c-49e9-99c8-fff3b13200cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/in/education/college/converter/StudentMarksConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentMarksDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/StudentMarks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentMarksRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f1ecbb6524a056e26220490d85d82808af8975" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f1ecbb6524a056e26220490d85d82808af8975" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/authentication/AuthenticationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/authentication/AuthenticationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/authentication/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/authentication/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/AuthenticationSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/AuthenticationSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/CustomLogoutHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/CustomLogoutHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/dto/RoleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/RoleDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/ExamType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/ExamType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/ExamTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/ExamTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/labels.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/labels.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-access.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/App Tasks Pending.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/App Tasks Pending.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/changePassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/changePassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/authentication/AuthenticationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/authentication/AuthenticationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/authentication/AuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/authentication/AuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/security/AuthenticationSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/security/AuthenticationSuccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/security/CustomLogoutHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/security/CustomLogoutHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/dto/RoleDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/dto/RoleDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/employee/EmployeeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/ExamType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/ExamType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/ExamTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/ExamTypeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/user/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/labels.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/labels.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/App Tasks Pending.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/App Tasks Pending.xlsx" afterDir="false" />
-    </list>
+    <list default="true" id="a2392b5a-070c-49e9-99c8-fff3b13200cb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -170,7 +113,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="23" />
-          <entry key="JAVA" value="160" />
+          <entry key="JAVA" value="162" />
           <entry key="JSP" value="18" />
           <entry key="JavaScript" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -184,10 +127,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/Employee.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentProgressReportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+            <state relative-caret-position="306">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -489,32 +435,6 @@
               <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="college" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="college" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="college" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -542,7 +462,7 @@
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559907646076" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559911021141" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -724,7 +644,7 @@
       <workItem from="1559211239436" duration="4675000" />
       <workItem from="1559542954530" duration="111000" />
       <workItem from="1559551892291" duration="57000" />
-      <workItem from="1559555726011" duration="87216000" />
+      <workItem from="1559555726011" duration="88063000" />
     </task>
     <servers />
   </component>
@@ -761,7 +681,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1085356000" />
+    <option name="totallyTimeSpent" value="1086203000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -944,13 +864,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="934" column="16" selection-start-line="934" selection-start-column="16" selection-end-line="934" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -969,16 +882,6 @@
             <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentProgressReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1355,8 +1258,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state relative-caret-position="425">
+          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/AcademicYearRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentProgressReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
