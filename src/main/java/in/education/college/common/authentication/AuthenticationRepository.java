@@ -133,12 +133,12 @@ public class AuthenticationRepository {
 			{
 				serviceMap = new HashMap<>();
 
-				serviceMap.put("service_id", rs.getString("service_id"));
-				serviceMap.put("service_url", rs.getString("service_url"));
-				serviceMap.put("service_name", rs.getString("service_name"));
-				serviceMap.put("parent_id", rs.getString("parent_id"));
-				serviceMap.put("display_order", rs.getString("display_order"));
-				serviceMap.put("menu_display", rs.getString("menu_display"));
+				serviceMap.put("serviceId", rs.getString("service_id"));
+				serviceMap.put("serviceUrl", rs.getString("service_url"));
+				serviceMap.put("serviceName", rs.getString("service_name"));
+				serviceMap.put("parentId", rs.getString("parent_id"));
+				serviceMap.put("displayOrder", rs.getString("display_order"));
+				serviceMap.put("menuDisplay", rs.getString("menu_display"));
 
 				services.add(serviceMap);
 			}
@@ -183,12 +183,12 @@ public class AuthenticationRepository {
 			{
 				serviceMap = new HashMap<>();
 
-				serviceMap.put("service_id", rs.getString("service_id"));
-				serviceMap.put("service_url", rs.getString("service_url"));
-				serviceMap.put("service_name", rs.getString("service_name"));
-				serviceMap.put("parent_id", rs.getString("parent_id"));
-				serviceMap.put("display_order", rs.getString("display_order"));
-				serviceMap.put("menu_display", rs.getString("menu_display"));
+				serviceMap.put("serviceId", rs.getString("service_id"));
+				serviceMap.put("serviceUrl", rs.getString("service_url"));
+				serviceMap.put("serviceName", rs.getString("service_name"));
+				serviceMap.put("parentId", rs.getString("parent_id"));
+				serviceMap.put("displayOrder", rs.getString("display_order"));
+				serviceMap.put("menuDisplay", rs.getString("menu_display"));
 
 				services.add(serviceMap);
 			}

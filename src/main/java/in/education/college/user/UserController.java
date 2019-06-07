@@ -109,8 +109,7 @@ public class UserController {
 	}
 
 	@PostMapping("/changePassword")
-	public ModelAndView change(@ModelAttribute UserDto userDto,
-			@RequestParam String newPassword, HttpServletRequest request) {
+	public ModelAndView change(@ModelAttribute UserDto userDto, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("changePassword", userDataDto, userDto);
 		mav.addObject(buttonValue, change );
@@ -118,13 +117,13 @@ public class UserController {
 		mav.addObject(msg, "Problem in Updating Password");
 		mav.addObject(method,"Post");
 
-		if(StringUtils.isNotEmpty(newPassword)) {
+		if(StringUtils.isNotEmpty(userDto.getNewPassword())) {
 			User LoggedInUser =
 					(User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 			Optional<UserDto> userOptional =
 					userService.changePassword(request, LoggedInUser.getUsername(),
-							userDto.getPassword(), newPassword);
+							userDto.getPassword(), userDto.getNewPassword());
 
 			if(userOptional.isPresent() && userOptional.get().getUserId() > 0) {
 				mav.addObject(msg, "Password Updated");

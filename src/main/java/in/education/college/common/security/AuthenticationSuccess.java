@@ -11,7 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
@@ -39,7 +38,7 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
 		HttpSession session = request.getSession(true);
-		HashMap<String, String> serviceMap;
+
 		ObjectMapper oMapper = new ObjectMapper();
 
 		// Get the Principal User object
@@ -51,6 +50,33 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 		// Update the LastLogin of User
 		userService.registerSuccessfulLogin(user.getUserId());
 		session.setAttribute("username", user.getUsername());
+
+		String[] roleNames = user.getRoles()
+								.stream()
+								.map(Role::getRoleName)
+								.collect(Collectors.toList())
+								.stream()
+								.toArray(String[] :: new);
+
+		List<Service> services = new ArrayList<>();
+
+		roleRepository.findByRoleNameIn(roleNames)
+						.forEach(role -> services.addAll(role.getServices()));
+
+		services.sort(Comparator.comparing(Service :: getParentId)
+								.thenComparing(Service :: getServiceId));
+
+		List serviceUrls = services.stream()
+				.filter(service -> service.getMenuDisplay() == 1 )
+				.collect(Collectors.toList())
+				.stream()
+				.map(service -> oMapper.convertValue(service, Map.class))
+				.collect(Collectors.toList());
+
+		session.setAttribute("servicesMenu", new JSONArray(serviceUrls));
+
+		response.sendRedirect("/home");
+
 
 		// To get Role Names
 		/*Set<String> roles = authentication.getAuthorities().stream()
@@ -73,30 +99,18 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 		/*Iterable<Service> servicesActual =
 				serviceRepository.findByServiceName(user.getUsername());*/
 
-		String[] roleNames = user.getRoles()
-								.stream()
-								.map(Role::getRoleName)
-								.collect(Collectors.toList())
-								.stream()
-								.toArray(String[] :: new);
-
-		List<Service> services = new ArrayList<>();
-
+		/*List<Service> services1 = new ArrayList<>();
 		roleRepository.findByRoleNameIn(roleNames)
-						.forEach(role -> services.addAll(role.getServices()));
-
-		List<Service> services1 = new ArrayList<>();
-
-		/*roleRepository.findByRoleNameIn(roleNames)
 				.stream()
 				.map(role -> role.getServices())
 				.forEach(service -> Collectors.toCollection(() -> services1));
+		System.out.println(services1);
+		*/
 
-		System.out.println(services1);*/
+		// Working Code //
 
-		services.sort(Comparator.comparing(Service :: getParentId)
-								.thenComparing(Service :: getServiceId));
-
+		/*
+		HashMap<String, String> serviceMap;
 		List serviceUrls = services.stream()
 						.filter(service -> service.getMenuDisplay() == 1 )
 						.collect(Collectors.toList())
@@ -110,19 +124,23 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 
 			HashMap<String, String> sMap = (HashMap) service;
 
+			System.out.println(sMap);
+
 			serviceMap = new HashMap<>();
-			serviceMap.put("service_id", sMap.get("serviceId"));
-			serviceMap.put("service_url", sMap.get("serviceUrl"));
-			serviceMap.put("service_name", sMap.get("serviceName"));
-			serviceMap.put("parent_id", sMap.get("parentId"));
-			serviceMap.put("display_order", sMap.get("displayOrder"));
-			serviceMap.put("menu_display", sMap.get("menuDisplay"));
+			serviceMap.put("serviceId", sMap.get("serviceId"));
+			serviceMap.put("serviceUrl", sMap.get("serviceUrl"));
+			serviceMap.put("serviceName", sMap.get("serviceName"));
+			serviceMap.put("parentId", sMap.get("parentId"));
+			serviceMap.put("displayOrder", sMap.get("displayOrder"));
+			serviceMap.put("menuDisplay", sMap.get("menuDisplay"));
 
 			servicesMenuList.add(serviceMap);
-		}
-		session.setAttribute("servicesMenu", new JSONArray(servicesMenuList));
+		}*/
+		// Working Code //
 
-		response.sendRedirect("/home");
+
+
+
 //		super.onAuthenticationSuccess(request, response, authentication);
 	}
 }

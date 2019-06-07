@@ -34,7 +34,6 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 	Optional<Student> findFirstByAadharNo(String aadharNo);
 	Optional<Student> findFirstByMobileNo(String mobile);
 
-
 	List<Student> findByNameContains(String name);
 	List<Student> findByRollNoAndNameContains(String rollNo, String name);
 
@@ -46,6 +45,9 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 	List<Student> findByBatchIdAndJoiningYearId(long batchId, long joiningYearId);
 	List<Student> findByBranchIdAndBatchIdAndJoiningYearId(String branchId,
 			long batchId, long joiningYearId);
+
+	List<Student> findByBatchIdAndBranchIdAndJoiningYearIdAndJoiningSemesterId(
+			long batchId, String branchId, long joiningYearId, long semesterId);
 
 
 }

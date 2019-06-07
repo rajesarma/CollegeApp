@@ -28,6 +28,30 @@ public class ExamType implements Serializable {
 	@NotNull
 	@Column(name="max_marks")
 	private long maxMarks;
+
+	public long getExamTypeId() {
+		return examTypeId;
+	}
+
+	public void setExamTypeId(long examTypeId) {
+		this.examTypeId = examTypeId;
+	}
+
+	public String getExamType() {
+		return examType;
+	}
+
+	public void setExamType(String examType) {
+		this.examType = examType;
+	}
+
+	public long getMaxMarks() {
+		return maxMarks;
+	}
+
+	public void setMaxMarks(long maxMarks) {
+		this.maxMarks = maxMarks;
+	}
 }
 
 

@@ -7,6 +7,15 @@ import java.util.List;
 
 public class RoleDto implements Serializable {
 
+	public RoleDto() {
+
+	}
+
+	public RoleDto(long roleId, String roleName) {
+		this.roleId = roleId;
+		this.roleName = roleName;
+	}
+
 	private static final long serialVersionUID = 1L;
 	private long roleId;
 	private String roleName;

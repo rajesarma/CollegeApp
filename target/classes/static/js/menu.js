@@ -15,13 +15,13 @@ function builddata(menulist1)
 	{
 		var item = menulist1[i];
 
-		var label = item["service_name"];
-		var parentid = item["parent_id"];
-		var id = item["service_id"];
-		var target =item["service_url"];
+		var label = item["serviceName"];
+		var parentid = item["parentId"];
+		var id = item["serviceId"];
+		var target =item["serviceUrl"];
 
 		var menuposition="SHOW";
-		var orderid= parseInt(item["display_order"]);
+		var orderid= parseInt(item["displayOrder"]);
 		if(menuposition=='SHOW')
 		{
 			if (items[parentid])

@@ -66,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/webjars/**").permitAll()
 
 				.antMatchers(getUrlPattern(Urls.ADMIN)).access(hasRole(Roles.ADMIN_ROLE))
-				.antMatchers(getUrlPattern(Urls.FACULTY)).access(hasRole(Roles.FACULTY_ROLE, Roles.ADMIN_ROLE))
+				.antMatchers(getUrlPattern(Urls.EMPLOYEE)).access(hasRole(Roles.EMPLOYEE_ROLE, Roles.ADMIN_ROLE))
 				.antMatchers(getUrlPattern(Urls.STUDENT)).access(hasRole(Roles.STUDENT_ROLE, Roles.ADMIN_ROLE))
 				.antMatchers(getUrlPattern(Urls.MANAGEMENT)).access(hasRole(Roles.MANAGEMENT_ROLE, Roles.ADMIN_ROLE))
 				.antMatchers(getUrlPattern(Urls.SUPERVIZOR)).access(hasRole(Roles.SUPERVIZOR_ROLE, Roles.ADMIN_ROLE))
@@ -182,7 +182,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			return "hasAnyRole(" + s + ")";
 		}
 	}
-
 }
 
 	/*@Bean

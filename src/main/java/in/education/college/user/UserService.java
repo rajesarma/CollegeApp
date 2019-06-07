@@ -44,7 +44,7 @@ public class UserService {
 				.collect(Collectors.toMap(Role::getRoleId, Role::getRoleName));
 	}
 
-	Optional<UserDto> save(HttpServletRequest request, UserDto userDto) {
+	public Optional<UserDto> save(HttpServletRequest request, UserDto userDto) {
 
 		User user = UserConverter.convert(userDto);
 
@@ -146,7 +146,7 @@ public class UserService {
 
 		log.info("<USER><USER:DELETE>"
 				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-				+ "<" + userDto.getUsername() +" : not deleted>");
+				+ "<" + userDto.getUsername() +" : deleted>");
 
 		return Optional.empty();
 	}

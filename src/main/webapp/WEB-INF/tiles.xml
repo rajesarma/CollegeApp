@@ -67,6 +67,14 @@
                        value="/WEB-INF/views/studentAttendance/studentAttendance.jsp" />
     </definition>
 
+    <definition name="studentMarks" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/studentMarks/studentMarks.jsp" />
+    </definition>
+
+    <definition name="studentProgressReport" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/studentMarks/studentProgressReport.jsp" />
+    </definition>
+
     <definition name="user" extends="tilesTemplate">
         <put-attribute name="body" value="/WEB-INF/views/user/user.jsp" />
     </definition>

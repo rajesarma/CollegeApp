@@ -91,10 +91,10 @@
 								<spring:message code="user.newPassword"/>
 							</label>
 							<div class="controls">
-								<input type="text" name="newPassword" maxlength="20"
-									   class="span3" />
-								<%--<form:password path="newPassword" id="newPassword" maxlength="20"
-											   cssClass="span3" />--%>
+								<%--<input type="text" name="newPassword" maxlength="20"
+									   class="span3" />--%>
+								<form:password path="newPassword" id="newPassword" maxlength="20"
+											   cssClass="span3" />
 								<span class="help-block">
 									<%--<form:errors path="newPassword" cssClass="error" />--%>
 								</span>

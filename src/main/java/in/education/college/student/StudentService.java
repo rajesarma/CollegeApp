@@ -1,25 +1,32 @@
 package in.education.college.student;
 
+import in.education.college.common.util.Constants.Roles;
 import in.education.college.common.util.Constants.StrConstants;
 import in.education.college.converter.StudentConverter;
+import in.education.college.converter.UserConverter;
 import in.education.college.dto.StudentDto;
+import in.education.college.dto.UserDto;
 import in.education.college.model.AcademicYear;
 import in.education.college.model.Batch;
 import in.education.college.model.BloodGroup;
 import in.education.college.model.Branch;
 import in.education.college.model.Semester;
 import in.education.college.model.Student;
+import in.education.college.model.User;
 import in.education.college.model.Year;
 import in.education.college.model.repository.AcademicYearRepository;
 import in.education.college.model.repository.BatchRepository;
 import in.education.college.model.repository.BloodGroupRepository;
 import in.education.college.model.repository.BranchRepository;
+import in.education.college.model.repository.RoleRepository;
+import in.education.college.model.repository.UserRepository;
 import in.education.college.model.repository.YearRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,12 +48,10 @@ public class StudentService {
 	private BloodGroupRepository bloodGroupRepository;
 	private StudentConverter studentConverter;
 
-	private static final Logger log = LoggerFactory.getLogger(StudentService.class);
+	private RoleRepository roleRepository;
+	private UserRepository userRepository;
 
-	/*private String rollNo="RollNo.";
-	private String mobileNo="mobileNo.";
-	private String aadharNo="aadharNo.";
-	private String email="Email";*/
+	private static final Logger log = LoggerFactory.getLogger(StudentService.class);
 
 	public Map<Long,String> getBatches() {
 
@@ -102,9 +107,26 @@ public class StudentService {
 
 		if(studentRepository.existsById(savedStudent.getStudentId())) {
 
-			log.info("<STUDENT><STUDENT:SAVE>"
-					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-					+ "<" + savedStudent.getStudentId() +" : inserted>");
+			// Taking Roll No as User Name
+			UserDto userDto = new UserDto(savedStudent.getRollNo(),
+					new BCryptPasswordEncoder().encode(savedStudent.getRollNo()),
+					false,
+					savedStudent.getName() + savedStudent.getBranchId(),
+					savedStudent.getEmail(),
+					roleRepository.findByRoleId(Roles.STUDENT_ROLE_ID)
+					);
+
+			User savedUser = userRepository.save(UserConverter.convert(userDto));
+
+			if(userRepository.existsById(savedUser.getUserId())) {
+				log.info("<STUDENT><STUDENT:SAVE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<Student : " + savedStudent.getName() +" created with username " + savedStudent.getRollNo() + ">");
+			} else {
+				log.info("<STUDENT><STUDENT:SAVE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<Student : " + savedStudent.getName() +" created without username >");
+			}
 
 			return Optional.of(studentConverter.convert(savedStudent));
 		}
@@ -214,18 +236,42 @@ public class StudentService {
 
 		if(studentOptional.isPresent()) {
 			Student toSaveStudent = studentOptional.get();
+
+			String oldRollNo = toSaveStudent.getRollNo();
+
 			BeanUtils.copyProperties(student, toSaveStudent);
 			Student savedStudent = studentRepository.save(toSaveStudent);
 
 			if(studentRepository.existsById(savedStudent.getStudentId())) {
 
-				log.info("<STUDENT><STUDENT:UPDATE>"
-						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-						+ "<" + savedStudent.getStudentId() +" : updated>");
+				// Update Username
+				Optional<User> userOptional = userRepository.findByUsername(oldRollNo);
+
+				if(userOptional.isPresent()) {
+					User toUpdateUser = userOptional.get();
+					toUpdateUser.setUsername(savedStudent.getRollNo());
+					toUpdateUser.setPassword(new BCryptPasswordEncoder().encode(savedStudent.getRollNo()));
+
+					User savedUser = userRepository.save(toUpdateUser);
+
+					log.info("<STUDENT><STUDENT:UPDATE>"
+							+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+							+ "<Student : " + savedStudent.getName() + " updated with new User Name " + savedUser.getUsername() + ">");
+				} else {
+
+					log.info("<STUDENT><STUDENT:UPDATE>"
+							+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+							+ "<Student : " + toSaveStudent.getName() +" updated, Username not found to update >");
+				}
 
 				return Optional.of(studentConverter.convert(savedStudent));
 			}
 		}
+
+		log.info("<STUDENT><STUDENT:UPDATE>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<Student : " + studentOptional.get().getName() +" not updated, Student not found to update >");
+
 		return Optional.empty();
 	}
 
@@ -243,9 +289,22 @@ public class StudentService {
 			return Optional.of(studentConverter.convert(studentOptional.get()));
 		}
 
-		log.info("<STUDENT><STUDENT:DELETE>"
-				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-				+ "<" + studentDto.getName() +" : deleted>");
+		// Delete Username
+		Optional<User> userOptional =
+				userRepository.findByUsername(studentDto.getRollNo());
+
+		if(userOptional.isPresent()) {
+			userRepository.deleteById(userOptional.get().getUserId());
+
+			log.info("<STUDENT><STUDENT:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<Student : " + studentDto.getName() +" deleted with user>");
+		} else {
+
+			log.info("<STUDENT><STUDENT:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<Student : " + studentDto.getName() +" deleted, Username not found to delete >");
+		}
 
 		return Optional.empty();
 	}
@@ -335,5 +394,15 @@ public class StudentService {
 	@Autowired
 	public void setStudentConverter(StudentConverter studentConverter) {
 		this.studentConverter = studentConverter;
+	}
+
+	@Autowired
+	public void setRoleRepository(RoleRepository roleRepository) {
+		this.roleRepository = roleRepository;
+	}
+
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
 	}
 }

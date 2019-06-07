@@ -1,12 +1,8 @@
 package in.education.college.student;
 
-import in.education.college.common.util.Constants.StrConstants;
-import in.education.college.common.util.Util;
 import in.education.college.dto.StudentDto;
 import in.education.college.validator.StudentValidator;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.util.Pair;
@@ -25,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.logging.Level;
 
 @Controller
 @RequestMapping(value="/super")

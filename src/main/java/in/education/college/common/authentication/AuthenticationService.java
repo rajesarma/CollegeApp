@@ -50,13 +50,13 @@ public class AuthenticationService {
 		session.setAttribute("user_desc", user.getUserDesc());
 
 		List serviceUrls =  servicesList.stream()
-				.map(serviceMap -> serviceMap.get("service_url"))
+				.map(serviceMap -> serviceMap.get("serviceUrl"))
 				.collect(Collectors.toList());
 
 		session.setAttribute("serviceUrls", serviceUrls);
 
 		List<HashMap<String, String>> servicesShowList = servicesList.stream()
-				.filter(serviceMap -> "1".equalsIgnoreCase(serviceMap.get("menu_display")))
+				.filter(serviceMap -> "1".equalsIgnoreCase(serviceMap.get("menuDisplay")))
 				.collect(Collectors.toList());
 
 //		System.out.println(servicesShowList);

@@ -1,26 +1,33 @@
 package in.education.college.employee;
 
 import in.education.college.common.util.Constants.Conditions;
+import in.education.college.common.util.Constants.Roles;
 import in.education.college.common.util.Constants.StrConstants;
 import in.education.college.converter.EmployeeConverter;
+import in.education.college.converter.UserConverter;
 import in.education.college.dto.EmployeeForm;
+import in.education.college.dto.UserDto;
 import in.education.college.model.AcademicYear;
 import in.education.college.model.BloodGroup;
 import in.education.college.model.Department;
 import in.education.college.model.Employee;
 import in.education.college.model.Qualification;
 import in.education.college.model.Semester;
+import in.education.college.model.User;
 import in.education.college.model.repository.AcademicYearRepository;
 import in.education.college.model.repository.BloodGroupRepository;
 import in.education.college.model.repository.DepartmentRepository;
 import in.education.college.model.repository.EmployeeRepository;
 import in.education.college.model.repository.QualificationRepository;
+import in.education.college.model.repository.RoleRepository;
 import in.education.college.model.repository.SemesterRepository;
+import in.education.college.model.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +49,9 @@ public class EmployeeService {
 	private DepartmentRepository departmentRepository;
 	private QualificationRepository qualificationRepository;
 	private EmployeeConverter employeeConverter;
+
+	private RoleRepository roleRepository;
+	private UserRepository userRepository;
 
 	private static final Logger log = LoggerFactory.getLogger(EmployeeService.class);
 
@@ -88,11 +98,29 @@ public class EmployeeService {
 		Employee employee = employeeConverter.convert(employeeForm);
 		Employee savedEmployee = employeeRepository.save(employee);
 
-		if(savedEmployee.getEmployeeId() > 0) {
+		if(employeeRepository.existsById(savedEmployee.getEmployeeId())) {
 
-			log.info("<EMPLOYEE><EMPLOYEE:SAVE>"
-					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-					+ "<" + savedEmployee.getEmployeeId() +" : inserted>");
+			UserDto userDto = new UserDto(savedEmployee.getEmpNo(),
+					new BCryptPasswordEncoder().encode(savedEmployee.getEmpNo()),
+					false,
+					savedEmployee.getName(),
+					savedEmployee.getEmail(),
+					roleRepository.findByRoleId(Roles.EMPLOYEE_ROLE_ID)
+			);
+
+			User savedUser = userRepository.save(UserConverter.convert(userDto));
+
+			if(userRepository.existsById(savedUser.getUserId())) {
+
+				log.info("<EMPLOYEE><EMPLOYEE:SAVE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<Employee : " + savedEmployee.getName() +" created with username " + savedEmployee.getEmpNo() + ">");
+
+			} else {
+				log.info("<EMPLOYEE><EMPLOYEE:SAVE>"
+						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+						+ "<Employee : " + savedEmployee.getName() +" created without username >");
+			}
 
 			return Optional.of(employeeConverter.convert(savedEmployee));
 		}
@@ -271,19 +299,44 @@ public class EmployeeService {
 		Optional<Employee> employeeOptional = employeeRepository.findById(employee.getEmployeeId());
 
 		if(employeeOptional.isPresent()) {
+
 			Employee toSaveEmployee = employeeOptional.get();
+
+			String oldEmpNo = toSaveEmployee.getEmpNo();
+
+
 			BeanUtils.copyProperties(employee, toSaveEmployee);
 			Employee savedEmployee = employeeRepository.save(toSaveEmployee);
 
 			if(employeeRepository.existsById(savedEmployee.getEmployeeId())) {
 
-				log.info("<EMPLOYEE><EMPLOYEE:UPDATE>"
-						+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
-						+ "<" + savedEmployee.getEmployeeId() +" : updated>");
+				// Update Username
+				Optional<User> userOptional = userRepository.findByUsername(oldEmpNo);
 
+				if(userOptional.isPresent()) {
+					User toUpdateUser = userOptional.get();
+					toUpdateUser.setUsername(savedEmployee.getEmpNo());
+					toUpdateUser.setPassword(new BCryptPasswordEncoder().encode(savedEmployee.getEmpNo()));
+
+					User savedUser = userRepository.save(toUpdateUser);
+
+					log.info("<EMPLOYEE><EMPLOYEE:UPDATE>"
+							+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+							+ "<EMPLOYEE : " + savedEmployee.getName() + " updated with new User Name " + savedUser.getUsername() + ">");
+				} else {
+
+					log.info("<EMPLOYEE><EMPLOYEE:UPDATE>"
+							+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+							+ "<EMPLOYEE : " + savedEmployee.getName() +" updated, Username not found to update >");
+				}
 				return Optional.of(employeeConverter.convert(savedEmployee));
 			}
 		}
+
+		log.info("<EMPLOYEE><EMPLOYEE:UPDATE>"
+				+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+				+ "<EMPLOYEE : " + employeeOptional.get().getName() +" not updated, Employee not found to update >");
+
 		return Optional.empty();
 	}
 
@@ -299,6 +352,23 @@ public class EmployeeService {
 					+ "<" + employeeOptional.get().getName() +" : not deleted>");
 
 			return Optional.of(employeeConverter.convert(employeeOptional.get()));
+		}
+
+		// Delete Username
+		Optional<User> userOptional =
+				userRepository.findByUsername(employeeForm.getEmpNo());
+
+		if(userOptional.isPresent()) {
+			userRepository.deleteById(userOptional.get().getUserId());
+
+			log.info("<EMPLOYEE><EMPLOYEE:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<EMPLOYEE : " + employeeForm.getName() +" deleted with user>");
+		} else {
+
+			log.info("<EMPLOYEE><EMPLOYEE:DELETE>"
+					+ "<User:" + request.getSession().getAttribute(StrConstants.SESSION_USER_NAME) + ">"
+					+ "<Student : " + employeeForm.getName() +" deleted, Username not found to delete >");
 		}
 
 		log.info("<EMPLOYEE><EMPLOYEE:DELETE>"
@@ -392,5 +462,15 @@ public class EmployeeService {
 	@Autowired
 	public void setEmployeeConverter(EmployeeConverter employeeConverter) {
 		this.employeeConverter = employeeConverter;
+	}
+
+	@Autowired
+	public void setRoleRepository(RoleRepository roleRepository) {
+		this.roleRepository = roleRepository;
+	}
+
+	@Autowired
+	public void setUserRepository(UserRepository userRepository) {
+		this.userRepository = userRepository;
 	}
 }

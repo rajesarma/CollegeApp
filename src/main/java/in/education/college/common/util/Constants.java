@@ -18,7 +18,7 @@ public class Constants {
 		public static final String SESSION_TIMEOUT = "/sessionTimeout";
 
 		public static final String ADMIN = "/admin/";
-		public static final String FACULTY = "/faculty/";
+		public static final String EMPLOYEE = "/employee/";
 		public static final String STUDENT = "/college/";
 		public static final String MANAGEMENT = "/management/";
 		public static final String SUPERVIZOR = "/super/";
@@ -31,10 +31,16 @@ public class Constants {
 
 	public static final class Roles {
 		public static final String ADMIN_ROLE = "ADMIN";
-		public static final String FACULTY_ROLE = "FACULTY";
+		public static final String EMPLOYEE_ROLE = "EMPLOYEE";
 		public static final String STUDENT_ROLE = "STUDENT";
 		public static final String MANAGEMENT_ROLE = "MANAGEMENT";
 		public static final String SUPERVIZOR_ROLE = "SUPERVIZOR";
+
+		public static final int ADMIN_ROLE_ID = 1;
+		public static final int EMPLOYEE_ROLE_ID = 2;
+		public static final int STUDENT_ROLE_ID = 3;
+		public static final int MANAGEMENT_ROLE_ID = 4;
+		public static final int SUPERVIZOR_ROLE_ID = 5;
 	}
 
 	public static final class StrConstants {

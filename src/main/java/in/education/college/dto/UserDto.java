@@ -7,6 +7,24 @@ import java.util.List;
 
 public class UserDto {
 
+	public UserDto() {
+
+	}
+
+	public UserDto(final String username,
+			final String password,
+			final boolean disabled,
+			final String userDesc,
+			final String email,
+			final List<Role> roles) {
+		this.username = username;
+		this.password = password;
+		this.disabled = disabled;
+		this.userDesc = userDesc;
+		this.email = email;
+		this.roles = roles;
+	}
+
 	private long userId;
 
 //	@NotEmpty(message = "{User Name can not be empty}")
@@ -14,6 +32,9 @@ public class UserDto {
 
 //	@NotEmpty(message = "{Password can not be empty}")
 	private String password;
+
+	private String newPassword;
+
 	private Boolean disabled;
 
 //	@NotEmpty(message = "{Description can not be empty}")
@@ -115,5 +136,13 @@ public class UserDto {
 
 	public void setActiveStatus(String activeStatus) {
 		this.activeStatus = activeStatus;
+	}
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
 }

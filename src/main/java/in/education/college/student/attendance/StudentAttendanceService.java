@@ -38,7 +38,7 @@ public class StudentAttendanceService {
 
 	List<StudentAttendanceDto> getStudentsAttendanceList(StudentAttendanceDto studentAttendance){
 
-		List<Map<String, String>> studentAttendanceAverage =
+		/*List<Map<String, String>> studentAttendanceAverage =
 				studentAttendanceRepository.averageByBatchIdAndBranchIdAndYearIdAndSemesterId(studentAttendance.getBatchId(),
 				studentAttendance.getBranchId(),
 				studentAttendance.getYearId(),
@@ -49,7 +49,7 @@ public class StudentAttendanceService {
 		List<Map<String, String>> allStudentAttendanceAverage =
 				studentAttendanceRepository.allAverageByBatchIdAndBranchIdAndYearIdAndSemesterId();
 
-		System.out.println(allStudentAttendanceAverage);
+		System.out.println(allStudentAttendanceAverage);*/
 
 		List<StudentAttendanceDto> studentAttendanceDtos = new ArrayList<>();
 		List<Student> notInAttendanceList;

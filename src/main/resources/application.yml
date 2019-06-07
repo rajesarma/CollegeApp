@@ -107,7 +107,7 @@ spring:
 # LOGGING ================================================================================
 logging:
   file: C:\\logs\\CollegeApp-debug.log
-  config: classpath:logback.xml
+  config: classpath:logback-access.xml
   #config: classpath:logback-file-only-appender.xml
   #path:
   pattern:
