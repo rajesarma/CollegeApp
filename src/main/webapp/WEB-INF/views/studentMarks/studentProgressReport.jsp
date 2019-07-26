@@ -9,7 +9,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Student Add</title>
+	<title>Student Progress Report</title>
 
 	<script>
 

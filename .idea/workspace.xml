@@ -5,78 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2392b5a-070c-49e9-99c8-fff3b13200cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/500.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/189b64974269d95da389f6bca36de60c59f13add" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/189b64974269d95da389f6bca36de60c59f13add" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/254138091c07ff1851ceb236482b4088bf487978" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/254138091c07ff1851ceb236482b4088bf487978" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a293fb1bc32d0915b3ce3575499a0b297495fd3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a293fb1bc32d0915b3ce3575499a0b297495fd3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40ee8c76698c3f1b7f2daabf55afc5c3c529d5d6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40ee8c76698c3f1b7f2daabf55afc5c3c529d5d6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/453c03c266280dbe4388ca646c357db25db595c5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/453c03c266280dbe4388ca646c357db25db595c5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/4651c6d9278c2f885540b844f995087243d8d017" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/4651c6d9278c2f885540b844f995087243d8d017" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b11d7bf137ef960913da3391f1eaadc299ffb7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/73b11d7bf137ef960913da3391f1eaadc299ffb7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b865d9924efe2d74ab85d1973c7348937bb48e3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b865d9924efe2d74ab85d1973c7348937bb48e3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7be285974c13bb719833d8ef821ea10588febf0d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7be285974c13bb719833d8ef821ea10588febf0d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dbf3dc62029e939d2cf8ad0c6d7353869baaf89" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dbf3dc62029e939d2cf8ad0c6d7353869baaf89" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f1ecbb6524a056e26220490d85d82808af8975" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99f1ecbb6524a056e26220490d85d82808af8975" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c05e8d6a8a5fcc7ad4c404d7b6f45db3a8928eb5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c05e8d6a8a5fcc7ad4c404d7b6f45db3a8928eb5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c74a335acacdcef4ddc6ed629db53b0cb7fd4dcb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c74a335acacdcef4ddc6ed629db53b0cb7fd4dcb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7ff1c2f5c984ba47c794b589a869263a5af5783" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7ff1c2f5c984ba47c794b589a869263a5af5783" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef41025d045b3a51c9ec9c19485978ba655deea7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef41025d045b3a51c9ec9c19485978ba655deea7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f051b19936ed35b36a9faafdea736744a76aff0b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f051b19936ed35b36a9faafdea736744a76aff0b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollegeApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CollegeApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/error/CustomErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/error/CustomErrorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/CustomLogoutHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/CustomLogoutHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/common/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentAttendanceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentAttendanceDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentMarksDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentMarksDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/employee/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/StudentAttendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/StudentAttendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/StudentMarks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/StudentMarks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentAttendanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentAttendanceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentMarksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentMarksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/EmployeeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentMarksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentMarksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentMarksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentMarksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/in/education/college/validator/EmployeeValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/in/education/college/validator/EmployeeValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/labels.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/labels.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/StudentAppPoints.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/StudentAppPoints.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/error/CustomErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/error/CustomErrorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/exception/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/security/CustomLogoutHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/security/CustomLogoutHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/common/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/common/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/dto/StudentAttendanceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/dto/StudentAttendanceDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/dto/StudentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/dto/StudentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/employee/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/employee/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/employee/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/employee/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/StudentAttendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/StudentAttendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/StudentAttendanceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/StudentAttendanceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentProgressReport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentProgressReport.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/model/repository/EmployeeRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/StudentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceController$StudentAttendanceForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/student/attendance/StudentAttendanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/in/education/college/validator/EmployeeValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/in/education/college/validator/EmployeeValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/labels.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/labels.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/StudentAppPoints.docx" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/StudentAppPoints.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -119,73 +55,63 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentPromote/studentPromote.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/management/managementReport.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="225" column="60" lean-forward="true" selection-start-line="225" selection-start-column="60" selection-end-line="225" selection-end-column="60" />
+            <state relative-caret-position="789">
+              <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
               <folding>
-                <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#7;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="320" column="82" lean-forward="true" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="82" />
+            <state relative-caret-position="493">
+              <caret line="34" column="33" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="43" column="52" lean-forward="true" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
               <folding>
-                <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#11;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1616#1617#0" expanded="true" />
+                <element signature="e#1665#1666#0" expanded="true" />
+                <element signature="e#1713#1714#0" expanded="true" />
+                <element signature="e#1762#1763#0" expanded="true" />
+                <element signature="e#1809#1810#0" expanded="true" />
+                <element signature="e#1858#1859#0" expanded="true" />
+                <element signature="e#1905#1906#0" expanded="true" />
+                <element signature="e#1954#1955#0" expanded="true" />
+                <element signature="e#2001#2002#0" expanded="true" />
+                <element signature="e#2050#2051#0" expanded="true" />
+                <element signature="e#2097#2098#0" expanded="true" />
+                <element signature="e#2146#2147#0" expanded="true" />
+                <element signature="e#2146#2147#0" expanded="true" />
+                <element signature="e#2205#2206#0" expanded="true" />
+                <element signature="e#2206#2207#0" expanded="true" />
+                <element signature="e#2268#2269#0" expanded="true" />
+                <element signature="e#2235#2236#0" expanded="true" />
+                <element signature="e#2284#2285#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentPromoteController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/EmployeeRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#999#1008#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentPromoteService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentAttendanceRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+            <state relative-caret-position="646">
+              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -193,17 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="45" column="86" lean-forward="true" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentMarksRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="122" column="23" lean-forward="true" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
+            <state relative-caret-position="289">
+              <caret line="82" column="47" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="82" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -225,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_csrf</find>
       <find>reque</find>
       <find>Respon</find>
       <find>@Qua</find>
@@ -253,8 +169,9 @@
       <find>attendanceDtos</find>
       <find>checkbox</find>
       <find>getExamTypesBySubjectId</find>
-      <find>\n</find>
       <find>checkSelection</find>
+      <find>\n</find>
+      <find>rowspan=&quot;2&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>getJoiningSemesterId</replace>
@@ -302,12 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/role/RoleServicesMappingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/user/RoleServicesMappingController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/user/UserRoleIdMappingController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/user/UserRoleIdsMappingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/user/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/dto/RoleDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/common/security/LogoutSuccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/dto/UserDto.java" />
@@ -338,11 +249,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/attendance/StudentAttendanceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentAttendanceController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/labels.properties" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/dto/StudentPromoteForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentAttendanceRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/marks/StudentMarksController.java" />
@@ -353,6 +261,15 @@
         <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentPromoteController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentPromote/studentPromote.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/in/education/college/management/StudentProgressReportController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentProgressReport.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/labels.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/in/education/college/model/repository/EmployeeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/management/managementReport.jsp" />
       </list>
     </option>
   </component>
@@ -390,7 +307,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="113" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -501,6 +418,57 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="college" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="college" type="462c0819:PsiDirectoryNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CollegeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CollegeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -513,7 +481,7 @@
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564132977230" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564144183094" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Git/bin/git.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -542,11 +510,11 @@
       <recent name="in.education.college.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\webapp\WEB-INF\views\management" />
+      <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\java\in\education\college\management" />
       <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\webapp\WEB-INF\views\studentPromote" />
       <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\java\in\education\college\student\promote" />
       <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\webapp\WEB-INF\views\common" />
-      <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\java\in\education\college\user" />
-      <recent name="D:\Workspaces\IntelliJWorkSpace\CollegeApp\src\main\webapp\WEB-INF\views\studentMarks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -713,7 +681,7 @@
       <workItem from="1562150914701" duration="11950000" />
       <workItem from="1563163863553" duration="15041000" />
       <workItem from="1563361438449" duration="1809000" />
-      <workItem from="1563769177468" duration="73622000" />
+      <workItem from="1563769177468" duration="77564000" />
     </task>
     <servers />
   </component>
@@ -750,7 +718,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1244893000" />
+    <option name="totallyTimeSpent" value="1248835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,7 +730,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924307" />
@@ -979,41 +947,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/common/security/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/common/configuration/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ExceptionHandlerExceptionResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="286" selection-start-line="286" selection-end-line="286" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar!/org/springframework/web/servlet/handler/AbstractHandlerMethodExceptionResolver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1215,20 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/labels.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentAttendance/studentAttendance.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
@@ -1340,24 +1259,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="45" column="86" lean-forward="true" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/StudentMarksRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
-          <caret line="122" column="23" lean-forward="true" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
+          <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentPromoteService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
-          <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1367,7 +1279,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/promote/StudentPromoteController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#999#1008#1" expanded="true" />
@@ -1378,7 +1290,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentMarks.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="320" column="82" lean-forward="true" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="82" />
+          <caret line="320" column="82" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="82" />
           <folding>
             <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
@@ -1394,8 +1306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentPromote/studentPromote.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="225" column="60" lean-forward="true" selection-start-line="225" selection-start-column="60" selection-end-line="225" selection-end-column="60" />
+        <state relative-caret-position="357">
+          <caret line="216" column="43" lean-forward="true" selection-start-line="216" selection-start-column="43" selection-end-line="216" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
@@ -1405,6 +1317,96 @@
             <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#7;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/student/StudentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="82" column="47" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="82" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studentMarks/studentProgressReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#center#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="113" column="38" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/labels.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="43" column="52" lean-forward="true" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+          <folding>
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1665#1666#0" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+            <element signature="e#1905#1906#0" expanded="true" />
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="e#2001#2002#0" expanded="true" />
+            <element signature="e#2050#2051#0" expanded="true" />
+            <element signature="e#2097#2098#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2205#2206#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2268#2269#0" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2284#2285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/management/ManagementReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/in/education/college/model/repository/EmployeeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/management/managementReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

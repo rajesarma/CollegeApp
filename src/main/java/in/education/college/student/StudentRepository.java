@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public interface StudentRepository extends CrudRepository<Student, Long> {
@@ -59,5 +60,64 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 			" WHERE s.student_id IN :studentIds", nativeQuery = true)
 	@Transactional
 	int updateCurrentYearIdAndCurrentSemesterId(@Param("studentIds") List<Long> studentIds);
+
+	@Query(value = "select bt.batch_name as batch, count(sd.student_id) as student_count" +
+			" from batch bt " +
+			" left join student_details sd on (sd.batch_id = bt.batch_id)" +
+			" group by bt.batch_name" +
+			" order by bt.batch_name", nativeQuery = true)
+	List<Map<String, String>> findByBatchWise();
+
+	@Query(value = "select b.branch_name, count(sd.student_id) as student_count" +
+			" from branch b" +
+			" left join student_details sd on (sd.branch_id = b.branch_id)" +
+			" group by b.branch_name" +
+			" order by b.branch_name", nativeQuery = true)
+	List<Map<String, String>> findByBranchWise();
+
+	@Query(value = "select y.year_name as year, count(sd.student_id) as student_count" +
+			" from year y " +
+			" left join student_details sd on (sd.current_year_id = y.year_id)" +
+			" group by y.year_name" +
+			" order by y.year_name", nativeQuery = true)
+	List<Map<String, String>> findByYearWise();
+
+	@Query(value = "select y.year_name as year, coalesce(s.semester_name,'-') as semester, count(sd.student_id) as student_count" +
+			" from year y " +
+			" left join student_details sd on (sd.current_year_id = y.year_id)" +
+			" left join semester s on (s.semester_id = sd.current_semester_id)" +
+			" group by y.year_name, s.semester_name" +
+			" order by y.year_name, s.semester_name", nativeQuery = true)
+	List<Map<String, String>> findByYearSemWise();
+
+	@Query(value = "select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, count(sd.student_id) as student_count" +
+			" from batch bt " +
+			" left join student_details sd on (sd.batch_id = bt.batch_id)" +
+			" left join branch b on (sd.branch_id = b.branch_id)" +
+			" group by bt.batch_name, b.branch_name" +
+			" order by bt.batch_id, b.branch_name", nativeQuery = true)
+	List<Map<String, String>> findByBatchBranchWise();
+
+	@Query(value = "select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, " +
+			" coalesce(y.year_name,'-') as year, count(sd.student_id) as student_count" +
+			" from batch bt " +
+			" left join student_details sd on (sd.batch_id = bt.batch_id)" +
+			" left join year y on (y.year_id = sd.current_year_id)" +
+			" left join branch b on (sd.branch_id = b.branch_id)" +
+			" group by bt.batch_name, b.branch_name, y.year_name" +
+			" order by bt.batch_id, b.branch_name, y.year_name", nativeQuery = true)
+	List<Map<String, String>> findByBatchBranchYearWise();
+
+	@Query(value = "select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, coalesce(y.year_name,'-') as year, " +
+			" coalesce(s.semester_name,'-') as semester, count(sd.student_id) as student_count" +
+			" from batch bt " +
+			" left join student_details sd on (sd.batch_id = bt.batch_id)" +
+			" left join branch b on (sd.branch_id = b.branch_id)" +
+			" left join year y on (y.year_id = sd.current_year_id)" +
+			" left join semester s on (s.semester_id = sd.current_semester_id)" +
+			" group by bt.batch_name, b.branch_name, y.year_name, s.semester_name" +
+			" order by bt.batch_id, b.branch_name, y.year_name, s.semester_name", nativeQuery = true)
+	List<Map<String, String>> findByBatchBranchYearSemWise();
+
 
 }

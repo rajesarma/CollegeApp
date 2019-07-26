@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
@@ -45,6 +46,11 @@ public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 	List<Employee> findAllBySalaryGreaterThanAndEmployeeIdIsIn(Double salary,
 			Collection<Long> empIds);
 
-
+	@Query(value = "select q.qly_name, count(e.emp_id) as emp_count " +
+			" from employee e " +
+			" left join qualifications q on (e. qly_id = q.qly_id)" +
+			" group by q.qly_name" +
+			" order by qly_name", nativeQuery = true)
+	List<Map<String, String>> findByEmpQlyWise();
 
 }

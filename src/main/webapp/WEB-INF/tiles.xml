@@ -111,6 +111,10 @@
         <put-attribute name="body" value="/WEB-INF/views/employee/searchEmployee.jsp" />
     </definition>
 
+    <definition name="managementReport" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/management/managementReport.jsp" />
+    </definition>
+
 
 
 
