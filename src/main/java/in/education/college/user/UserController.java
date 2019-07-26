@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -53,25 +55,36 @@ public class UserController {
 	private String selectedRoleIds = "selectedRoleIds";
 
 	@GetMapping("/admin/user/add")
-	public ModelAndView save() {
+	public ModelAndView save(HttpServletRequest req) {
 
 		ModelAndView mav = new ModelAndView("user", userDataDto, new UserDto());
 		mav.addObject(buttonValue, save );
 		mav.addObject(action,"/admin/user/add");
 		mav.addObject(method,"Post");
 		mav.addObject(roles, userService.getRoles());
+
+		Map<String,?> inputFlash = RequestContextUtils.getInputFlashMap(req);
+
+		/*if(inputFlash != null) {
+			mav.ad
+		}*/
+
 		return mav;
 	}
 
 	@PostMapping("/admin/user/add")
 	public ModelAndView save(@ModelAttribute UserDto userDto,
-			BindingResult bindingResult, HttpServletRequest request) { // @Valid
+			BindingResult bindingResult, HttpServletRequest request,
+			RedirectAttributes ra) { //
+		// @Valid
 
 		new UserValidator().validate(userDto, bindingResult);
 		ModelAndView mav = new ModelAndView("user", userDataDto, userDto);
 
 		if(!bindingResult.hasErrors()) {
 			Optional<UserDto> savedUserDto = userService.save(request, userDto);
+
+			ra.addFlashAttribute(userDto);
 
 			if (!savedUserDto.isPresent()) {
 				message = "User already existed";

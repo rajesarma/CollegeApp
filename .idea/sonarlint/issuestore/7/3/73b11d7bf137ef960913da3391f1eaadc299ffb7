@@ -1,16 +1,21 @@
 
-€squid:S2629Ö"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Öïøÿÿÿÿ8—Öá•°-
-Lsquid:S1199º"-Extract this nested code block into a method.(½ñ®8±Ô¹“°-
-Qsquid:S1199ç"-Extract this nested code block into a method.(æĞ’¥ıÿÿÿÿ8ÖŠ¼“°-
-Qsquid:S1199ñ"-Extract this nested code block into a method.(²¥Ã²ùÿÿÿÿ8ÖŠ¼“°-
-Lsquid:S1199Î"-Extract this nested code block into a method.(˜üÎÊ8±Ô¹“°-
-Lsquid:S1199É"-Extract this nested code block into a method.(ÓÁ¸€8±Ô¹“°-
-Qsquid:S1199ì"-Extract this nested code block into a method.(ï€Åšüÿÿÿÿ8ÖŠ¼“°-
-[squid:S2629ã"7Use the built-in formatting to construct this argument.(·ûÉøÿÿÿÿ8¶†ğ•°-
-Qsquid:S1199ö"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8ÖŠ¼“°-
-Lsquid:S1199µ"-Extract this nested code block into a method.(ä¶ƒ˜8±Ô¹“°-
-Lsquid:S1199Ä"-Extract this nested code block into a method.(Ø‹«‘8±Ô¹“°-
-jsquid:S1192^"GDefine a constant instead of duplicating this literal "<User:" 7 times.(Ñ“—†ûÿÿÿÿ8‡ìâ•°-
-Qsquid:S1199â"-Extract this nested code block into a method.(ú±Ã®şÿÿÿÿ8ÖŠ¼“°-
-€squid:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Öïøÿÿÿÿ8÷ÄÖ•°-
-Lsquid:S1199¿"-Extract this nested code block into a method.(…òÖ±8±Ô¹“°-
+qsquid:S3776±"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Æ”²Ö8“õ ¦¿-
+€squid:S1192æ"\Define a constant instead of duplicating this literal "<EMPLOYEE><EMPLOYEE:DELETE>" 4 times.(ÖíÀªüÿÿÿÿ8éßı‹³-
+csquid:S3655Ú"?Call "employeeOptional.isPresent()" before accessing the value.(Ç¾Ü•ùÿÿÿÿ8–É÷‹³-
+Lsquid:S1199í"-Extract this nested code block into a method.(ÓÁ¸€8±Ô¹“°-
+[squid:S2629±"7Use the built-in formatting to construct this argument.(·ûÉøÿÿÿÿ8áø‹³-
+Qsquid:S1199‹"-Extract this nested code block into a method.(æĞ’¥ıÿÿÿÿ8ÖŠ¼“°-
+Qsquid:S1199"-Extract this nested code block into a method.(ï€Åšüÿÿÿÿ8ÖŠ¼“°-
+Lsquid:S1199ò"-Extract this nested code block into a method.(˜üÎÊ8±Ô¹“°-
+Qsquid:S1199•"-Extract this nested code block into a method.(²¥Ã²ùÿÿÿÿ8ÖŠ¼“°-
+Lsquid:S1199è"-Extract this nested code block into a method.(Ø‹«‘8±Ô¹“°-
+Lsquid:S1199ã"-Extract this nested code block into a method.(…òÖ±8±Ô¹“°-
+Qsquid:S1199†"-Extract this nested code block into a method.(ú±Ã®şÿÿÿÿ8ÖŠ¼“°-
+€squid:S2629©"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Öïøÿÿÿÿ8÷ÄÖ•°-
+ksquid:S1192t"HDefine a constant instead of duplicating this literal "<User:" 12 times.(Ñ“—†ûÿÿÿÿ8‡ìâ•°-
+Qsquid:S1199š"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8ÖŠ¼“°-
+Lsquid:S1199Ù"-Extract this nested code block into a method.(ä¶ƒ˜8±Ô¹“°-
+Lsquid:S1199Ş"-Extract this nested code block into a method.(½ñ®8±Ô¹“°-
+{squid:S1192Ë"\Define a constant instead of duplicating this literal "<EMPLOYEE><EMPLOYEE:UPDATE>" 3 times.(ÑÊĞ8²£÷‹³-
+€squid:S2629ú"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Öïøÿÿÿÿ8—Öá•°-
+lsquid:S1192Í"MDefine a constant instead of duplicating this literal "<EMPLOYEE : " 4 times.(€ıÁı8²£÷‹³-

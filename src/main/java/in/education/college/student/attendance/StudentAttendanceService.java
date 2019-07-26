@@ -9,6 +9,7 @@ import in.education.college.student.StudentRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,7 +26,6 @@ public class StudentAttendanceService {
 	private StudentAttendanceRepository studentAttendanceRepository;
 	private StudentAttendanceConverter studentAttendanceConverter;
 
-
 	@Autowired
 	StudentAttendanceService(
 			final StudentAttendanceRepository studentAttendanceRepository,
@@ -36,7 +36,10 @@ public class StudentAttendanceService {
 		this.studentAttendanceConverter = studentAttendanceConverter;
 	}
 
-	List<StudentAttendanceDto> getStudentsAttendanceList(StudentAttendanceDto studentAttendance){
+	@Transactional
+	List<StudentAttendanceDto> getStudentsAttendanceList(StudentAttendanceDto studentAttendanceDto){
+
+		StudentAttendance studentAttendance = studentAttendanceConverter.convert(studentAttendanceDto);
 
 		/*List<Map<String, String>> studentAttendanceAverage =
 				studentAttendanceRepository.averageByBatchIdAndBranchIdAndYearIdAndSemesterId(studentAttendance.getBatchId(),
@@ -103,6 +106,7 @@ public class StudentAttendanceService {
 		return studentAttendanceDtos;
 	}
 
+	@Transactional
 	List<StudentAttendanceDto> saveAll(List<StudentAttendanceDto> studentAttendanceDtos) {
 
 		List<StudentAttendance> studentAttendances = new ArrayList<>();
@@ -123,6 +127,7 @@ public class StudentAttendanceService {
 				.collect(Collectors.toList());
 	}
 
+	@Transactional
 	Optional<StudentAttendanceDto> findById(Long studentAttendanceId) {
 		Optional<StudentAttendance> studentAttendanceOptional =
 				studentAttendanceRepository.findById(studentAttendanceId);
@@ -135,6 +140,7 @@ public class StudentAttendanceService {
 		return Optional.empty();
 	}
 
+	@Transactional
 	Optional<StudentAttendanceDto> update(StudentAttendanceDto studentAttendanceDto){
 
 		StudentAttendance studentAttendance = studentAttendanceConverter.convert(studentAttendanceDto);
@@ -154,6 +160,7 @@ public class StudentAttendanceService {
 		return Optional.empty();
 	}
 
+	@Transactional
 	Optional<StudentAttendanceDto> delete(StudentAttendanceDto studentAttendanceDto){
 		StudentAttendance studentAttendance = studentAttendanceConverter.convert(studentAttendanceDto);
 

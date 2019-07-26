@@ -39,7 +39,8 @@ public class StudentMarks implements Serializable {
 	@Id
 	@NotNull
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // , generator="native"
 	private long studentMarksId;
 
 	@Column(name = "batch_id")

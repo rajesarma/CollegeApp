@@ -65,6 +65,14 @@ public interface StudentAttendanceRepository extends CrudRepository<StudentAtten
 	List<Map<String, String>> allAverageByBatchIdAndBranchIdAndYearIdAndSemesterId();
 
 
+	@Query(value = "select case when count(sa.id) > 0 then sa.student_id else 0 end as student_id" +
+			" from student_attendance sa" +
+			" join student_details sd on (sa.student_id = sd.student_id and sa.semester_id = sd.current_semester_id " +
+			" and sa.year_id = sd.current_year_id)" +
+			" where sa.student_id = ?1", nativeQuery = true)
+	int findStudentByCurrentSemesterIdAndCurrentYearId(@Param("studentId") Long studentId);
+
+
 	/*@Modifying
 	@Query("insert into Person (id,name,age) select :id,:name,:age from Dual")
 	public int modifyingQueryInsertPerson(@Param("id")Long id, @Param("name")String name, @Param("age")Integer age);*/

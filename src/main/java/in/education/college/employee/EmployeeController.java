@@ -131,7 +131,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/employee/list")
-	public ModelAndView list(@ModelAttribute("employeeForm") EmployeeForm employeeForm,
+	public ModelAndView list(@ModelAttribute("employeeForm") EmployeeForm employeeForm, BindingResult bindingResult,
 			@RequestParam String conditionString, HttpServletRequest request) {
 
 		ModelAndView mav = new ModelAndView("employeeList");
@@ -147,12 +147,16 @@ public class EmployeeController {
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new)));
 		mav.addObject(role, Role);
 
-		List employeesList = employeeService.listBySalaries(request,
+		/*List employeesList = employeeService.listBySalaries(request,
 				employeeForm.getDeptId(),
 				employeeForm.getJoiningAcademicYearId(),
 				employeeForm.getJoiningSemesterId(),
 				employeeForm.getSalary(),
-				conditionString);
+				conditionString);*/
+
+		employeeForm.setConditionString(conditionString);
+
+		List employeesList = employeeService.listBySalaries(request, employeeForm);
 
 		if(employeesList.isEmpty()) {
 			mav.addObject("message", "No records found based on your selection");

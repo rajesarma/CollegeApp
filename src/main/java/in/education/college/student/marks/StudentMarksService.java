@@ -1,6 +1,7 @@
 package in.education.college.student.marks;
 
 import in.education.college.converter.StudentMarksConverter;
+import in.education.college.dto.StudentDto;
 import in.education.college.dto.StudentMarksDto;
 import in.education.college.model.ExamType;
 import in.education.college.model.Student;
@@ -13,6 +14,7 @@ import in.education.college.student.StudentRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -89,6 +91,7 @@ public class StudentMarksService {
 		return Optional.empty();
 	}
 
+	@Transactional
 	List<StudentMarksDto> getStudentsMarksList(StudentMarksDto studentMarks){
 
 		List<StudentMarksDto> studentMarksDtos = new ArrayList<>();
@@ -146,20 +149,39 @@ public class StudentMarksService {
 		return studentMarksDtos;
 	}
 
-	List<StudentMarksDto> saveAll(List<StudentMarksDto> studentMarksDtos) {
+	@Transactional
+	List<StudentMarksDto> saveAll(List<StudentMarksDto> studentMarksDtos, StudentMarksDto studentMarksDto) {
 
-		List<StudentMarks> studentMarkss = new ArrayList<>();
+		List<StudentMarks> studentsMarks = new ArrayList<>();
+
+		// Ensure that records are stored only for selected students
+		// Ensure marks to be entered in the sequence order of internal-1, internal-2 and external
+
+		System.out.println("getStudentIds : "+studentMarksDto.getStudentIds());
 
 		// Save only new records
 		studentMarksDtos.stream()
-				.filter(studentMarksDto -> studentMarksDto.getStudentMarksId() == 0)
-				.filter(studentMarksDto -> studentMarksDto.getMarks() > 0)
-				.filter(studentMarksDto -> studentMarksDto.getMaxMarks() > 0)
-				.filter(studentMarksDto -> studentMarksDto.getMaxMarks() >= studentMarksDto.getMarks())
-				.forEach(student -> studentMarkss.add(studentMarksConverter.convert(student)));
+				.filter(studentMDto -> studentMarksDto.getStudentIds().contains(studentMDto.getStudentId())) // Checkbox
+				.filter(studentMDto -> studentMDto.getStudentMarksId() == 0)
+				// .filter(studentMDto -> studentMDto.getMarks() > 0)	// Check if marks are entered
+				.filter(studentMDto -> studentMDto.getMaxMarks() > 0)	// Check if Max marks are entered
+				.filter(studentMDto -> studentMDto.getMaxMarks() >= studentMDto.getMarks())
+				.forEach(student -> studentsMarks.add(studentMarksConverter.convert(student)));
 
-		Iterable<StudentMarks> updatedStudentMarkss =
-				studentMarksRepository.saveAll(studentMarkss);
+		System.out.println("Before Filtering : "+studentsMarks);
+
+		List<StudentMarks> sms = studentsMarks.stream()
+				.filter(student -> studentMarksRepository.findByExamTypeId(student.getStudentId(),
+						studentMarksDto.getSemesterId(),
+						studentMarksDto.getYearId(),
+						studentMarksDto.getBranchId(),
+						studentMarksDto.getSubjectId()) == studentMarksDto.getExamTypeId())
+				.collect(Collectors.toList());
+
+		System.out.println("After Filtering : "+sms);
+
+//		Iterable<StudentMarks> updatedStudentMarkss = studentMarksRepository.saveAll(studentsMarks);
+		Iterable<StudentMarks> updatedStudentMarkss = studentMarksRepository.saveAll(sms);
 
 		return StreamSupport.stream(updatedStudentMarkss.spliterator(), false)
 				.map(stud -> studentMarksConverter.convert(stud))
@@ -178,6 +200,7 @@ public class StudentMarksService {
 		return Optional.empty();
 	}
 
+	@Transactional
 	Optional<StudentMarksDto> update(StudentMarksDto studentMarksDto){
 
 		StudentMarks studentMarks = studentMarksConverter.convert(studentMarksDto);
@@ -198,6 +221,7 @@ public class StudentMarksService {
 		return Optional.empty();
 	}
 
+	@Transactional
 	Optional<StudentMarksDto> delete(StudentMarksDto studentMarksDto){
 		StudentMarks studentMarks = studentMarksConverter.convert(studentMarksDto);
 

@@ -1,10 +1,11 @@
 package in.education.college.dto;
 
 import java.util.List;
+import java.util.Map;
 
-public class StudentAttendanceDto {
+public class StudentPromoteForm {
 
-	private long studentAttendanceId;
+	private long studentPromoteId;
 
 	private long batchId;
 	private String batch;
@@ -21,21 +22,12 @@ public class StudentAttendanceDto {
 	private long studentId;
 	private String studentName;
 
-	private long noOfDays;
-	private long daysPresent;
-
 	private String rollNo;
 	private String name;
 
-	private List<StudentAttendanceDto> attendanceDtos;
+	private List<StudentDto> students;
 
-	public long getStudentAttendanceId() {
-		return studentAttendanceId;
-	}
-
-	public void setStudentAttendanceId(long studentAttendanceId) {
-		this.studentAttendanceId = studentAttendanceId;
-	}
+	private List<Long> studentIds;
 
 	public long getBatchId() {
 		return batchId;
@@ -117,22 +109,6 @@ public class StudentAttendanceDto {
 		this.studentName = studentName;
 	}
 
-	public long getNoOfDays() {
-		return noOfDays;
-	}
-
-	public void setNoOfDays(long noOfDays) {
-		this.noOfDays = noOfDays;
-	}
-
-	public long getDaysPresent() {
-		return daysPresent;
-	}
-
-	public void setDaysPresent(long daysPresent) {
-		this.daysPresent = daysPresent;
-	}
-
 	public String getRollNo() {
 		return rollNo;
 	}
@@ -149,11 +125,27 @@ public class StudentAttendanceDto {
 		this.name = name;
 	}
 
-	public List<StudentAttendanceDto> getAttendanceDtos() {
-		return attendanceDtos;
+	public long getStudentPromoteId() {
+		return studentPromoteId;
 	}
 
-	public void setAttendanceDtos(List<StudentAttendanceDto> attendanceDtos) {
-		this.attendanceDtos = attendanceDtos;
+	public void setStudentPromoteId(long studentPromoteId) {
+		this.studentPromoteId = studentPromoteId;
+	}
+
+	public List<StudentDto> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<StudentDto> students) {
+		this.students = students;
+	}
+
+	public List<Long> getStudentIds() {
+		return studentIds;
+	}
+
+	public void setStudentIds(List<Long> studentIds) {
+		this.studentIds = studentIds;
 	}
 }

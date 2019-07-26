@@ -48,6 +48,10 @@
         <put-attribute name="body" value="/WEB-INF/views/common/404.jsp" />
     </definition>
 
+    <definition name="500" extends="homePageTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/common/500.jsp" />
+    </definition>
+
     <!--Common-->
 
     <definition name="addStudent" extends="tilesTemplate">
@@ -69,6 +73,10 @@
 
     <definition name="studentMarks" extends="tilesTemplate">
         <put-attribute name="body" value="/WEB-INF/views/studentMarks/studentMarks.jsp" />
+    </definition>
+
+    <definition name="studentPromote" extends="tilesTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/studentPromote/studentPromote.jsp" />
     </definition>
 
     <definition name="studentProgressReport" extends="tilesTemplate">

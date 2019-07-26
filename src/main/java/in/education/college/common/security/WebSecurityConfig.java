@@ -70,7 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(getUrlPattern(Urls.STUDENT)).access(hasRole(Roles.STUDENT_ROLE, Roles.ADMIN_ROLE))
 				.antMatchers(getUrlPattern(Urls.MANAGEMENT)).access(hasRole(Roles.MANAGEMENT_ROLE, Roles.ADMIN_ROLE))
 				.antMatchers(getUrlPattern(Urls.SUPERVIZOR)).access(hasRole(Roles.SUPERVIZOR_ROLE, Roles.ADMIN_ROLE))
-				.anyRequest().authenticated()
+				.anyRequest()
+				.authenticated()
 				.and()
 			.formLogin()
 				.loginPage("/")
@@ -84,8 +85,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 				.accessDeniedPage(Urls.ACCESS_DENIED)
 //				.and().sessionManagement().invalidSessionUrl(Urls.SESSION_TIMEOUT)
+//				.and().sessionManagement().invalidSessionUrl(Urls.ACCESS_DENIED)
 				.and()
-
 			.logout()
 //				.logoutUrl("/logout")
 				.addLogoutHandler(customLogoutHandler())
@@ -93,7 +94,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 				;
 	}
-
 
 	// is used for configuration settings that impact global security (ignore resources,
 	// set debug mode, reject requests by implementing a custom firewall definition).

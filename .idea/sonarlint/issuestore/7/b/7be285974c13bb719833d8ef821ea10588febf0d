@@ -1,15 +1,16 @@
 
-ksquid:S1192r"MDefine a constant instead of duplicating this literal "employeeList" 9 times.(ó‘õ8öèå•°-
-gsquid:UselessImportCheck"=Remove this unused import 'javax.net.ssl.HttpsURLConnection'.(æÎº08ğ‘Ş•°-
-esquid:S1192I"GDefine a constant instead of duplicating this literal "action" 6 times.(«î‚Á8ç¡¾È¯-
-‚squid:S1192¤"^Define a constant instead of duplicating this literal "selectedJoiningAcademicYearId" 5 times.(™×Âÿÿÿÿÿ8ÒÑÑÈ¯-
-Esquid:S1452­"&Remove usage of generic wildcard type.(Ü«ŒÈ8öèå•°-
-~squid:S1192¥"ZDefine a constant instead of duplicating this literal "selectedJoiningSemesterId" 5 times.(œ°Å•ÿÿÿÿÿ8öèå•°-
-jsquid:S1192H"LDefine a constant instead of duplicating this literal "buttonValue" 6 times.(Í¶ò8ç¡¾È¯-
-lsquid:S1192F"NDefine a constant instead of duplicating this literal "employeeForm" 10 times.(öÖåÎ8§¤ìÊ®-
-Isquid:S10688"+Remove this unused "message" private field.(Éè¯8¤ŸÉ®-
-ssquid:S1192£"ODefine a constant instead of duplicating this literal "selectedDeptId" 5 times.(³š¸“ıÿÿÿÿ8«¡£ë¯-
-jsquid:S1192F"LDefine a constant instead of duplicating this literal "addEmployee" 4 times.(öÖåÎ8ç¡¾È¯-
-}squid:S18457"_Rename field "role" to prevent any misunderstanding/clash with field "Role" defined on line 43.(—Àöœ8¤ŸÉ®-
 msquid:S3008+"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Úƒ€8¤ŸÉ®-
 lsquid:S1192]"IDefine a constant instead of duplicating this literal "message" 10 times.(ãÔëÿÿÿÿÿ8¤ŸÉ®-
+Esquid:S1452±"&Remove usage of generic wildcard type.(Ü«ŒÈ8Ñˆğ£¿-
+gsquid:UselessImportCheck"=Remove this unused import 'javax.net.ssl.HttpsURLConnection'.(æÎº08ğ‘Ş•°-
+ssquid:S1192§"ODefine a constant instead of duplicating this literal "selectedDeptId" 5 times.(³š¸“ıÿÿÿÿ8Ñˆğ£¿-
+}squid:S18457"_Rename field "role" to prevent any misunderstanding/clash with field "Role" defined on line 43.(—Àöœ8¤ŸÉ®-
+lsquid:S1192F"NDefine a constant instead of duplicating this literal "employeeForm" 10 times.(öÖåÎ8§¤ìÊ®-
+esquid:S1192I"GDefine a constant instead of duplicating this literal "action" 6 times.(«î‚Á8ç¡¾È¯-
+Isquid:S10688"+Remove this unused "message" private field.(Éè¯8¤ŸÉ®-
+jsquid:S1192H"LDefine a constant instead of duplicating this literal "buttonValue" 6 times.(Í¶ò8ç¡¾È¯-
+‚squid:S1192¨"^Define a constant instead of duplicating this literal "selectedJoiningAcademicYearId" 5 times.(™×Âÿÿÿÿÿ8ÒÑÑÈ¯-
+jsquid:S1192F"LDefine a constant instead of duplicating this literal "addEmployee" 4 times.(öÖåÎ8ç¡¾È¯-
+osquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(àê‹‡úÿÿÿÿ8´£ë£¿-
+ksquid:S1192r"MDefine a constant instead of duplicating this literal "employeeList" 9 times.(ó‘õ8öèå•°-
+~squid:S1192©"ZDefine a constant instead of duplicating this literal "selectedJoiningSemesterId" 5 times.(œ°Å•ÿÿÿÿÿ8”üí£¿-

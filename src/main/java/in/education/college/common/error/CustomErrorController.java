@@ -1,14 +1,31 @@
 package in.education.college.common.error;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//@Controller
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
 public class CustomErrorController implements ErrorController {
 
 	@RequestMapping("/error")
-	public String handleError() {
-//		System.out.println("Error");
+	public String handleError(HttpServletRequest request) {
+		Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+
+		if(status != null) {
+			Integer statusCode = Integer.valueOf(status.toString());
+
+			if (statusCode == HttpStatus.NOT_FOUND.value()) {
+				request.setAttribute("message", "Page Not Found for the specified Url"); // : "+ request.getRequestURI() );
+				return "404";
+			} else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+				request.setAttribute("message", "Internal Server Error");
+				return "500";
+			}
+		}
 		return "error";
 	}
 

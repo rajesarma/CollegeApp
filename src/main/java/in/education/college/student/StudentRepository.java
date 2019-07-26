@@ -1,9 +1,11 @@
 package in.education.college.student;
 
 import in.education.college.model.Student;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -49,5 +51,13 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 	List<Student> findByBatchIdAndBranchIdAndJoiningYearIdAndJoiningSemesterId(
 			long batchId, String branchId, long joiningYearId, long semesterId);
 
+	@Modifying(clearAutomatically = true)
+	@Query(value = "UPDATE student_details s" +
+			" SET current_year_id = (SELECT year_id FROM semester WHERE semester_id = (s.current_semester_id + 1))," +
+			" current_semester_id = (SELECT semester_id FROM semester WHERE semester_id = (s.current_semester_id + 1)),"+
+			" promoted_date = current_timestamp()" +
+			" WHERE s.student_id IN :studentIds", nativeQuery = true)
+	@Transactional
+	int updateCurrentYearIdAndCurrentSemesterId(@Param("studentIds") List<Long> studentIds);
 
 }

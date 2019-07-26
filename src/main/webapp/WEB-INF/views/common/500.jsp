@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Internal Server Error</title>
 
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -47,7 +47,7 @@
 			<div class="row">
 				<div class="span12">
 					<div class="centered">
-						<h3 >Something Went Wrong</h3>
+						<h3 >500</h3>
 					</div>
 				</div>
 			</div>
@@ -59,8 +59,11 @@
 		<div class="row">
 			<div class="span12">
 				<div class="centered">
-					<%--<h3 class="error">400</h3>--%>
-					<h4>${message}</h4>
+					<%--<h2 class="error">500</h2>--%>
+					<h3>${message}</h3>
+					<%--<p>
+						Internal Server Error.
+					</p>--%>
 				</div>
 			</div>
 		</div>

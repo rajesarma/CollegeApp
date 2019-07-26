@@ -174,9 +174,17 @@ public class EmployeeService {
 	}
 
 
-	List<EmployeeForm> listBySalaries(HttpServletRequest request, long deptId,
-			long joiningAcademicYearId,
-			long joiningSemesterId, double salary, String condition) {
+	List<EmployeeForm> listBySalaries(HttpServletRequest request, EmployeeForm employeeForm) {
+
+		long deptId = employeeForm.getDeptId() > 0 ? employeeForm.getDeptId() : 0;
+		long joiningAcademicYearId = employeeForm.getJoiningAcademicYearId() > 0 ? employeeForm.getJoiningAcademicYearId()
+				: 0;
+
+		long joiningSemesterId = employeeForm.getJoiningSemesterId() > 0 ?
+				employeeForm.getJoiningSemesterId(): 0;
+		double salary = employeeForm.getSalary() != null ? employeeForm.getSalary() : 0.0;
+		String condition = !employeeForm.getConditionString().isEmpty() ?
+				employeeForm.getConditionString() : "";
 
 		List<Employee> employeesList = new ArrayList<>();
 		List<EmployeeForm> employeeForms = new ArrayList<>();

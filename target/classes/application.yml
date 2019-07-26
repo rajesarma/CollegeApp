@@ -142,3 +142,26 @@ logging:
 #  username: root
 #  password: mytrah
 #debug: true
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      roles: ["ADMIN", "SUPER"]
+      show-details: when_authorized
+    httptrace:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /application
+      exposure:
+#        include: ["health", "info", "beans", "env", "loggers","metrics"]
+        include: "*"
+        exclude: loggers
+
+info:
+  app:
+    name: College Project
+    java:
+      version: 8
+    type: Spring Boot

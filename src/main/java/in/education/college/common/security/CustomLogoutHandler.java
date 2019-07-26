@@ -17,17 +17,17 @@ import java.io.IOException;
 
 
 public class CustomLogoutHandler implements LogoutHandler {
-	private static final Logger log = LoggerFactory.getLogger(LogoutSuccess.class);
+//	private static final Logger log = LoggerFactory.getLogger(LogoutSuccess.class);
 	@Override
 	public void logout(HttpServletRequest request,
 			HttpServletResponse httpServletResponse, Authentication authentication) {
 
-		if(SecurityContextHolder.getContext().getAuthentication().getPrincipal() !=null) {
+		/*if(SecurityContextHolder.getContext().getAuthentication().getPrincipal() !=null) {
 			User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 			log.info("User logged out: " + user.getUsername() + " - " + request.getRemoteHost());
 		}
-
+*/
 //		System.out.println("In Logout: "+authentication.getPrincipal());
 
 		/*Authentication auth = SecurityContextHolder.getContext().getAuthentication();

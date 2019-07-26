@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Page Not Found</title>
 
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -59,9 +59,8 @@
 		<div class="row">
 			<div class="span12">
 				<div class="centered">
-					<h2 class="error">404</h2>
+					<%--<h2 class="error">404</h2>--%>
 					<h3>${message}</h3>
-					message
 					<p>
 						The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
 					</p>

@@ -57,7 +57,7 @@ public class EmployeeValidator implements Validator {
 		}*/
 
 		if(employeeForm.getJoiningAcademicYearId() == 0) {
-			errors.rejectValue("joiningYearId", "zeroValue.employee.joiningAcademicYearId",
+			errors.rejectValue("joiningAcademicYearId", "zeroValue.employee.joiningAcademicYearId",
 					new Object[]{
 					"Joining Academic Year"}, "Please select this");
 		}

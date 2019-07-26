@@ -1,10 +1,10 @@
 
-isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(„Éæ¡8Ÿß½™®-
+~squid:S11924"[Define a constant instead of duplicating this literal "/student/studentAttendance" 5 times.(ÍÁËÓûÿÿÿÿ8¶ëÛí¯-
 usquid:S11920"RDefine a constant instead of duplicating this literal "studentAttendance" 6 times.(¨âÛùÿÿÿÿ8ƒÛ ª­-
-xsquid:S11920"UDefine a constant instead of duplicating this literal "studentAttendanceDto" 5 times.(¨âÛùÿÿÿÿ8Úª†ñ­-
-hsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(·“˜}8Ÿß½™®-
-nsquid:S00116%"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÔë¶8òÉ™®-
-isquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(·Ì†u8Ÿß½™®-
 msquid:S1192W"ODefine a constant instead of duplicating this literal "attendanceForm" 5 times.(Å÷ÌÌ8Ÿß½™®-
 }squid:S1845&"_Rename field "role" to prevent any misunderstanding/clash with field "Role" defined on line 37.(—Àöœ8§Ê©¨¬-
-~squid:S11924"[Define a constant instead of duplicating this literal "/student/studentAttendance" 5 times.(ÍÁËÓûÿÿÿÿ8¶ëÛí¯-
+isquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(·Ì†u8Ÿß½™®-
+xsquid:S11920"UDefine a constant instead of duplicating this literal "studentAttendanceDto" 5 times.(¨âÛùÿÿÿÿ8Úª†ñ­-
+isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(„Éæ¡8Ÿß½™®-
+nsquid:S00116%"ORename this field "Role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âÔë¶8òÉ™®-
+hsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(·“˜}8Ÿß½™®-

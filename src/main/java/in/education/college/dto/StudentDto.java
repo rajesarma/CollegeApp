@@ -45,7 +45,6 @@ public class StudentDto {
 	private long currentSemesterId;
 	private String currentSemester;
 
-
 	public long getStudentId() {
 		return studentId;
 	}

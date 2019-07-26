@@ -1,5 +1,7 @@
 package in.education.college.dto;
 
+import java.util.List;
+
 public class StudentMarksDto {
 
 	private long studentMarksId;
@@ -30,6 +32,10 @@ public class StudentMarksDto {
 
 	private String rollNo;
 	private String name;
+
+	private List<Long> studentIds;
+
+	private List<StudentMarksDto> marksDtos;
 
 	public long getStudentMarksId() {
 		return studentMarksId;
@@ -181,5 +187,21 @@ public class StudentMarksDto {
 
 	public void setExamType(String examType) {
 		this.examType = examType;
+	}
+
+	public List<StudentMarksDto> getMarksDtos() {
+		return marksDtos;
+	}
+
+	public void setMarksDtos(List<StudentMarksDto> marksDtos) {
+		this.marksDtos = marksDtos;
+	}
+
+	public List<Long> getStudentIds() {
+		return studentIds;
+	}
+
+	public void setStudentIds(List<Long> studentIds) {
+		this.studentIds = studentIds;
 	}
 }

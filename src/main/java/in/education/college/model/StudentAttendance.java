@@ -58,7 +58,8 @@ public class StudentAttendance implements Serializable {
 	@Id
 	@NotNull
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+//	@GeneratedValue(strategy = GenerationType.AUTO, generator="native")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long studentAttendanceId;
 
 	@Column(name = "batch_id")

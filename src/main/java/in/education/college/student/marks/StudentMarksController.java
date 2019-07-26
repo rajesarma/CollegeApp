@@ -71,28 +71,85 @@ public class StudentMarksController {
 		mav.addObject(method,"POST");
 		mav.addObject(showTab, "list");
 
-		List<StudentMarksDto> studentMarksDtos =
-				studentMarksService.getStudentsMarksList(studentMarksDto);
+		List<StudentMarksDto> studentMarksDtos = studentMarksService.getStudentsMarksList(studentMarksDto);
 
 		if(studentMarksDtos.isEmpty()) {
 			mav.addObject(message, "No records found based on your selection");
 		}
 
-		StudentMarksForm marksForm = new StudentMarksForm();
-		marksForm.setMarksDtos(studentMarksDtos);
-		marksForm.setBatchId(studentMarksDto.getBatchId());
-		marksForm.setBranchId(studentMarksDto.getBranchId());
-		marksForm.setYearId(studentMarksDto.getYearId());
-		marksForm.setSemesterId(studentMarksDto.getSemesterId());
-		marksForm.setSubjectId(studentMarksDto.getSubjectId());
-		marksForm.setExamTypeId(studentMarksDto.getExamTypeId());
+		studentMarksDto.setMarksDtos(studentMarksDtos);
 
-		mav.addObject("marksForm", marksForm);
+//		StudentMarksForm marksForm = new StudentMarksForm();
+//		marksForm.setMarksDtos(studentMarksDtos);
+//		marksForm.setBatchId(studentMarksDto.getBatchId());
+//		marksForm.setBranchId(studentMarksDto.getBranchId());
+//		marksForm.setYearId(studentMarksDto.getYearId());
+//		marksForm.setSemesterId(studentMarksDto.getSemesterId());
+//		marksForm.setSubjectId(studentMarksDto.getSubjectId());
+//		marksForm.setExamTypeId(studentMarksDto.getExamTypeId());
+//
+//		mav.addObject("marksForm", marksForm);
 
 		return mav;
 	}
 
 	@PostMapping("/student/studentMarks/add")
+	public ModelAndView save(@ModelAttribute("studentMarksDto") StudentMarksDto studentMarksDto) {
+
+		List<StudentMarksDto> marksDtos = studentMarksDto.getMarksDtos();
+
+//		ModelAndView mav = new ModelAndView("studentMarks", "marksForm", new StudentMarksForm());
+		ModelAndView mav = new ModelAndView("studentMarks");
+
+		mav.addObject(buttonValue, "Save");
+//		mav.addObject(action, Role + "/student/studentMarks/add");
+		mav.addObject(action, Role + "/student/studentMarks");
+		mav.addObject("marksAction", Role + "/student/studentMarks/add");
+		mav.addObject(method,"POST");
+		mav.addObject(showTab, "list");
+
+		List<StudentMarksDto> insertedStudentDtos = studentMarksService.saveAll(marksDtos, studentMarksDto);
+
+		if(insertedStudentDtos.isEmpty()) {
+			mav.addObject(message, "Problem in inserting records");
+		} else {
+			mav.addObject(message, "Student Marks Records Updated");
+		}
+
+		studentMarksDto.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
+
+//		StudentMarksForm newMarksForm = new StudentMarksForm();
+//		marksForm.setMarksDtos(insertedStudentDtos);
+//		mav.addObject("marksForm", newMarksForm);
+//
+//		StudentMarksDto studentMarksDto = new StudentMarksDto();
+//		studentMarksDto.setBatchId(marksForm.getBatchId());
+//		studentMarksDto.setBranchId(marksForm.getBranchId());
+//		studentMarksDto.setYearId(marksForm.getYearId());
+//		studentMarksDto.setSemesterId(marksForm.getSemesterId());
+//		studentMarksDto.setSubjectId(marksForm.getSubjectId());
+//		studentMarksDto.setExamTypeId(marksForm.getExamTypeId());
+//
+//		mav.addObject("studentMarksDto", studentMarksDto);
+
+		getInitialData(mav);
+		getSelectedData(mav, studentMarksDto);
+
+//		marksForm.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
+//		marksForm.setBatchId(marksForm.getBatchId());
+//		marksForm.setBranchId(marksForm.getBranchId());
+//		marksForm.setYearId(marksForm.getYearId());
+//		marksForm.setSemesterId(marksForm.getSemesterId());
+//		marksForm.setSubjectId(marksForm.getSubjectId());
+//		marksForm.setExamTypeId(marksForm.getExamTypeId());
+
+//		mav.addObject("marksForm", marksForm);
+//		getDataList(mav, studentMarksDto);
+
+		return mav;
+	}
+
+	/*@PostMapping("/student/studentMarks/add")
 	public ModelAndView save(@ModelAttribute("marksForm") StudentMarksForm marksForm) {
 
 		List<StudentMarksDto> marksDtos = marksForm.getMarksDtos();
@@ -132,27 +189,27 @@ public class StudentMarksController {
 
 		getSelectedData(mav, studentMarksDto);
 
-		/*mav.addObject("selectedBatchId", marksForm.getBatchId());
-		mav.addObject("selectedBranchId", marksForm.getBranchId());
-		mav.addObject("selectedYearId", marksForm.getYearId());
-		mav.addObject("selectedSemesterId", marksForm.getSemesterId());
-		mav.addObject("selectedSubjectId", marksForm.getSubjectId());
-		mav.addObject("selectedExamTypeId", marksForm.getExamTypeId());
-
-		Optional<Map<Long,String>> semestersOptional =
-				studentService.getSemesetersByYearId(marksForm.getYearId());
-
-		if(semestersOptional.isPresent()) {
-			mav.addObject("semesters", semestersOptional.get());
-		}
-
-		Optional<Map<Long,String>> subjectsOptional =
-				studentMarksService.getSubjectsByBranchIdAndSemesterId(marksForm.getBranchId(),
-						marksForm.getSemesterId());
-
-		if(subjectsOptional.isPresent()) {
-			mav.addObject("subjects", subjectsOptional.get());
-		}*/
+//		mav.addObject("selectedBatchId", marksForm.getBatchId());
+//		mav.addObject("selectedBranchId", marksForm.getBranchId());
+//		mav.addObject("selectedYearId", marksForm.getYearId());
+//		mav.addObject("selectedSemesterId", marksForm.getSemesterId());
+//		mav.addObject("selectedSubjectId", marksForm.getSubjectId());
+//		mav.addObject("selectedExamTypeId", marksForm.getExamTypeId());
+//
+//		Optional<Map<Long,String>> semestersOptional =
+//				studentService.getSemesetersByYearId(marksForm.getYearId());
+//
+//		if(semestersOptional.isPresent()) {
+//			mav.addObject("semesters", semestersOptional.get());
+//		}
+//
+//		Optional<Map<Long,String>> subjectsOptional =
+//				studentMarksService.getSubjectsByBranchIdAndSemesterId(marksForm.getBranchId(),
+//						marksForm.getSemesterId());
+//
+//		if(subjectsOptional.isPresent()) {
+//			mav.addObject("subjects", subjectsOptional.get());
+//		}
 
 		marksForm.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
 		marksForm.setBatchId(marksForm.getBatchId());
@@ -168,9 +225,9 @@ public class StudentMarksController {
 		getDataList(mav, studentMarksDto);
 
 		return mav;
-	}
+	}*/
 
-	@GetMapping("/student/studentMarks/edit/{studentMarksId}/{operation}")
+	@PostMapping("/student/studentMarks/edit/{studentMarksId}/{operation}")
 	public ModelAndView edit(@PathVariable("studentMarksId") long studentMarksId,
 			@PathVariable("operation") String operation) {
 
@@ -220,7 +277,10 @@ public class StudentMarksController {
 			mav.addObject(message, "Student Marks updated successfully");
 			StudentMarksDto updatedMarksDto = studentMarksDtoOptional.get();
 			getSelectedData(mav, updatedMarksDto);
-			getDataList(mav, updatedMarksDto);
+//			getDataList(mav, updatedMarksDto);
+
+			List<StudentMarksDto> studentsAttendanceList = studentMarksService.getStudentsMarksList(studentMarksDto);
+			studentMarksDto.setMarksDtos(studentsAttendanceList);
 		}
 
 		return mav;
@@ -237,8 +297,7 @@ public class StudentMarksController {
 		mav.addObject(showTab, "list");
 		getInitialData(mav);
 
-		Optional<StudentMarksDto> studentMarksDtoOptional =
-				studentMarksService.delete(studentMarksDto);
+		Optional<StudentMarksDto> studentMarksDtoOptional = studentMarksService.delete(studentMarksDto);
 
 		if(studentMarksDtoOptional.isPresent()) {
 
@@ -251,7 +310,10 @@ public class StudentMarksController {
 		}  else {
 			mav.addObject(message, "Student Marks deleted successfully");
 			getSelectedData(mav, studentMarksDto);
-			getDataList(mav, studentMarksDto);
+//			getDataList(mav, studentMarksDto);
+
+			List<StudentMarksDto> studentsAttendanceList = studentMarksService.getStudentsMarksList(studentMarksDto);
+			studentMarksDto.setMarksDtos(studentsAttendanceList);
 		}
 
 		return mav;
@@ -260,7 +322,7 @@ public class StudentMarksController {
 
 	// Ajax request
 	@GetMapping(value = "/student/studentMarks/{type}/{value1}/{value2}")
-	public ResponseEntity<?> find(@PathVariable("type") String type,
+	public ResponseEntity<String> find(@PathVariable("type") String type,
 			@PathVariable("value1") String value1,
 			@PathVariable("value2") String value2) {
 
@@ -315,7 +377,7 @@ public class StudentMarksController {
 		mav.addObject("batches", studentService.getBatches());
 		mav.addObject("branches", studentService.getBranches());
 		mav.addObject("years", studentService.getYears());
-		mav.addObject("examTypes", studentMarksService.getExamTypes());
+//		mav.addObject("examTypes", studentMarksService.getExamTypes());
 	}
 
 	private void getSelectedData(ModelAndView mav, StudentMarksDto studentMarksDto) {
@@ -340,100 +402,110 @@ public class StudentMarksController {
 		if(subjectsOptional.isPresent()) {
 			mav.addObject("subjects", subjectsOptional.get());
 		}
-	}
 
-	private void getDataList(ModelAndView mav, StudentMarksDto studentMarksDto) {
+		Optional<Map<Long,String>> examTypesOptional =
+				studentMarksService.getExamTypesBySubjectId(studentMarksDto.getExamTypeId());
 
-		StudentMarksForm marksForm = new StudentMarksForm();
-		marksForm.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
-		marksForm.setBatchId(studentMarksDto.getBatchId());
-		marksForm.setBranchId(studentMarksDto.getBranchId());
-		marksForm.setYearId(studentMarksDto.getYearId());
-		marksForm.setSemesterId(studentMarksDto.getSemesterId());
-		marksForm.setSubjectId(studentMarksDto.getSubjectId());
-		marksForm.setExamTypeId(studentMarksDto.getExamTypeId());
-
-		mav.addObject("marksForm", marksForm);
-	}
-
-	public class StudentMarksForm {
-
-		private long batchId;
-		private String branchId;
-		private long yearId;
-		private long semesterId;
-		private long subjectId;
-		private long examTypeId;
-
-		public long getBatchId() {
-			return batchId;
-		}
-
-		public void setBatchId(long batchId) {
-			this.batchId = batchId;
-		}
-
-		public String getBranchId() {
-			return branchId;
-		}
-
-		public void setBranchId(String branchId) {
-			this.branchId = branchId;
-		}
-
-		public long getYearId() {
-			return yearId;
-		}
-
-		public void setYearId(long yearId) {
-			this.yearId = yearId;
-		}
-
-		public long getSemesterId() {
-			return semesterId;
-		}
-
-		public void setSemesterId(long semesterId) {
-			this.semesterId = semesterId;
-		}
-
-		public long getSubjectId() {
-			return subjectId;
-		}
-
-		public void setSubjectId(long subjectId) {
-			this.subjectId = subjectId;
-		}
-
-		public long getExamTypeId() {
-			return examTypeId;
-		}
-
-		public void setExamTypeId(long examTypeId) {
-			this.examTypeId = examTypeId;
-		}
-
-		private List<StudentMarksDto> marksDtos;
-
-		public List<StudentMarksDto> getMarksDtos() {
-			return marksDtos;
-		}
-
-		public void setMarksDtos(List<StudentMarksDto> marksDtos) {
-			this.marksDtos = marksDtos;
-		}
-
-		@Override
-		public String toString() {
-			return "StudentMarksForm{" +
-					"batchId=" + batchId +
-					", branchId='" + branchId + '\'' +
-					", yearId=" + yearId +
-					", semesterId=" + semesterId +
-					", subjectId=" + subjectId +
-					", examTypeId=" + examTypeId +
-					", marksDtos=" + marksDtos +
-					'}';
+		if(examTypesOptional.isPresent()) {
+			mav.addObject("examTypes", examTypesOptional.get());
 		}
 	}
+
+//	private void getDataList(ModelAndView mav, StudentMarksDto studentMarksDto) {
+//
+//		studentMarksDto.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
+//
+//		StudentMarksForm marksForm = new StudentMarksForm();
+//		marksForm.setMarksDtos(studentMarksService.getStudentsMarksList(studentMarksDto));
+//		marksForm.setBatchId(studentMarksDto.getBatchId());
+//		marksForm.setBranchId(studentMarksDto.getBranchId());
+//		marksForm.setYearId(studentMarksDto.getYearId());
+//		marksForm.setSemesterId(studentMarksDto.getSemesterId());
+//		marksForm.setSubjectId(studentMarksDto.getSubjectId());
+//		marksForm.setExamTypeId(studentMarksDto.getExamTypeId());
+//
+//		mav.addObject("marksForm", marksForm);
+//	}
+
+//	public class StudentMarksForm {
+//
+//		private long batchId;
+//		private String branchId;
+//		private long yearId;
+//		private long semesterId;
+//		private long subjectId;
+//		private long examTypeId;
+//
+//		public long getBatchId() {
+//			return batchId;
+//		}
+//
+//		public void setBatchId(long batchId) {
+//			this.batchId = batchId;
+//		}
+//
+//		public String getBranchId() {
+//			return branchId;
+//		}
+//
+//		public void setBranchId(String branchId) {
+//			this.branchId = branchId;
+//		}
+//
+//		public long getYearId() {
+//			return yearId;
+//		}
+//
+//		public void setYearId(long yearId) {
+//			this.yearId = yearId;
+//		}
+//
+//		public long getSemesterId() {
+//			return semesterId;
+//		}
+//
+//		public void setSemesterId(long semesterId) {
+//			this.semesterId = semesterId;
+//		}
+//
+//		public long getSubjectId() {
+//			return subjectId;
+//		}
+//
+//		public void setSubjectId(long subjectId) {
+//			this.subjectId = subjectId;
+//		}
+//
+//		public long getExamTypeId() {
+//			return examTypeId;
+//		}
+//
+//		public void setExamTypeId(long examTypeId) {
+//			this.examTypeId = examTypeId;
+//		}
+//
+//		private List<StudentMarksDto> marksDtos;
+//
+//		public List<StudentMarksDto> getMarksDtos() {
+//			return marksDtos;
+//		}
+//
+//		public void setMarksDtos(List<StudentMarksDto> marksDtos) {
+//			this.marksDtos = marksDtos;
+//		}
+//
+//		@Override
+//		public String toString() {
+//			return "StudentMarksForm{" +
+//					"batchId=" + batchId +
+//					", branchId='" + branchId + '\'' +
+//					", yearId=" + yearId +
+//					", semesterId=" + semesterId +
+//					", subjectId=" + subjectId +
+//					", examTypeId=" + examTypeId +
+//					", marksDtos=" + marksDtos +
+//					'}';
+//		}
+//	}
+
 }
