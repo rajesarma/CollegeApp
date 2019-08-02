@@ -16,6 +16,12 @@
         <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
     </definition>
 
+    <!--For Management Dashboard-->
+    <definition name="managementTemplate" template="/WEB-INF/views/common/managementTemplate.jsp">
+        <put-attribute name="body" value="body" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>
+
     <!--For Remaining Pages-->
     <definition name="tilesTemplate" template="/WEB-INF/views/common/tilesTemplate.jsp">
         <put-attribute name="menu" value="/WEB-INF/views/common/menu.jsp" />
@@ -113,6 +119,10 @@
 
     <definition name="managementReport" extends="tilesTemplate">
         <put-attribute name="body" value="/WEB-INF/views/management/managementReport.jsp" />
+    </definition>
+
+    <definition name="managementDashboard" extends="managementTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/management/managementDashboard.jsp" />
     </definition>
 
 

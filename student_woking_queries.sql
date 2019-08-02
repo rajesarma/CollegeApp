@@ -765,6 +765,15 @@ left join semester s on (s.semester_id = sd.current_semester_id)
 group by y.year_name, s.semester_name
 order by y.year_name, s.semester_name;
 
+-- Year Semester wise - 2
+select y.year_name as year, coalesce(s.semester_name,'-') as semester, s.semester_id, coalesce(sd.student_id, 0) as student_count
+from semester s
+left join student_details sd on (s.semester_id = sd.current_semester_id)
+left join year y on (s.year_id = y.year_id)
+group by s.semester_name, y.year_name
+order by y.year_name, s.semester_name;
+
+select * from branch;
 -- Batch Branch wise
 select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, count(sd.student_id) as student_count
 from batch bt 
@@ -773,14 +782,15 @@ left join branch b on (sd.branch_id = b.branch_id)
 group by bt.batch_name, b.branch_name
 order by bt.batch_id, b.branch_name;
 
+select * from year;
 -- Batch Branch Year wise
-select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, coalesce(y.year_name,'-') as year, count(sd.student_id) as student_count
+select bt.batch_name as batch, coalesce(y.year_name,'-') as year, coalesce(b.branch_name, '-') as branch, count(sd.student_id) as student_count
 from batch bt 
 left join student_details sd on (sd.batch_id = bt.batch_id)
 left join year y on (y.year_id = sd.current_year_id)
 left join branch b on (sd.branch_id = b.branch_id)
 group by bt.batch_name, b.branch_name, y.year_name
-order by bt.batch_id, b.branch_name, y.year_name;
+order by bt.batch_id, y.year_name, b.branch_name;
 
 -- Batch Branch Year Semester wise
 select bt.batch_name as batch, coalesce(b.branch_name, '-') as branch, coalesce(y.year_name,'-') as year, coalesce(s.semester_name,'-') as semester, count(sd.student_id) as student_count
@@ -803,7 +813,92 @@ select * from employee;
 
 select * from services;
 
+select * from branch;
 
+insert into services (service_id, service_url, service_name,disabled, parent_id, display_order, menu_display)
+values(37, '/management/managementDashboard', 'Management Dashboard', 0, 23, 38, 1 );
 
+select * from student_details;
 
+select sum(students_total) as 1_students_total, sum(male) as 2_male, sum(female) as 3_female, sum(employees_count) as 4_employees_count
+from (
+	select sum(student_id) as students_total, sum(male) as male, sum(female) as female, 0 as employees_count
+	from (
+		select 
+			case when student_id is not null then 1 else 0 end as student_id,
+			case when gender = 'MALE' then 1 else 0 end as male,
+			case when gender = 'FEMALE' then 1 else 0 end as female
+		from student_details
+	) t
+	union all 
+	select 0 as students_total, 0 as male, 0 as female, count(*) as employees_count from employee
+)p;
+
+select * from branch;
+
+select 
+'01' as civil_code,
+'02' as eee_code,
+'03' as mech_code,
+'04' as ece_code,
+'05' as cse_code,
+'12' as it_code,
+
+sum(civil) as civil, sum(eee) as eee, sum(mech) as mech, sum(ece) as ece, sum(cse) as cse, sum(it) as it
+	from (
+	select 
+	case when branch_id = '01' then 1 else 0 end as civil,
+	case when branch_id = '02' then 1 else 0 end as eee,
+	case when branch_id = '03' then 1 else 0 end as mech,
+	case when branch_id = '04' then 1 else 0 end as ece,
+	case when branch_id = '05' then 1 else 0 end as cse,
+	case when branch_id = '12' then 1 else 0 end as it
+from student_details) t;
+
+select b.branch_id, b.branch_name, count(sd.student_id)
+from 
+branch b
+left join student_details sd on (sd.branch_id = b.branch_id)
+group by b.branch_id, b.branch_name;
+
+select student_name, student_id, DATE_FORMAT(doj, "%d %M, %Y") as doj, doj, timestamp(doj) from student_details 
+order by timestamp(doj) desc;
+-- DATE_FORMAT(doj, "%d %M %Y"), 
+-- limit 5;
+
+select student_name, roll_no, father_name, batch_name, year_name as current_year, semester_name as current_semester
+from student_details sd
+left join batch b on (b.batch_id = sd.batch_id)
+left join year y on (y.year_id = sd.current_year_id)
+left join semester s on (s.semester_id = sd.current_semester_id)
+where branch_id = '01';
+
+select student_name, roll_no, father_name, 
+(select batch_name from batch b where b.batch_id = sd.batch_id) as batch_name, 
+(select year_name from year y where y.year_id = sd.current_year_id) as current_year,
+(select semester_name from semester s where s.semester_id = sd.current_semester_id) as current_semester
+from student_details sd
+where branch_id = '01';
+
+select * from batch;
+
+select count(*) from student_details;
+select count(*) from student_details where gender = 'MALE';
+select count(*) from student_details where gender = 'FEMALE';
+
+update student_details set  gender = 'FEMALE' where student_id = 225;
+
+SELECT batch_name, coalesce(branch_name, '-') as branch_name, coalesce(semester_name, '-') as semester_name, 
+coalesce(round(avg(no_of_days),2),0) as no_of_days, coalesce(round(avg(days_present),2),0) as days_present 
+FROM batch b
+left join student_attendance sd on(sd.batch_id = b.batch_id)
+left join branch br on (sd.branch_id = br.branch_id)
+left join semester s on (s.semester_id = sd.semester_id)
+group by batch_name, branch_name, semester_name;
+
+SELECT batch_name, 
+coalesce(case when sum(days_present)=0 then 0 else round((sum(days_present)/sum(no_of_days))*100,2) end, 0) as att_avg
+FROM batch b
+left join student_attendance sa on(sa.batch_id = b.batch_id)
+group by batch_name
 

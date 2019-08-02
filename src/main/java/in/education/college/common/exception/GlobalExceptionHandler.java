@@ -31,6 +31,7 @@ public class GlobalExceptionHandler {
 	public ModelAndView handleNullPointerException(NullPointerException ex) {
 		ModelAndView mav = new ModelAndView("error");	// shows 404.jsp
 //		mav.addObject("message", ex.toString());
+
 		mav.addObject("message", "Something went wrong. Please contact support");
 		return mav;
 

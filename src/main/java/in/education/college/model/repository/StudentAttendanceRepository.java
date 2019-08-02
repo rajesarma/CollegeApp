@@ -72,6 +72,13 @@ public interface StudentAttendanceRepository extends CrudRepository<StudentAtten
 			" where sa.student_id = ?1", nativeQuery = true)
 	int findStudentByCurrentSemesterIdAndCurrentYearId(@Param("studentId") Long studentId);
 
+	@Query(value = "SELECT batch_name, coalesce(case when sum(days_present)=0 then 0 else round((sum(days_present)/sum(no_of_days))*100,2) " +
+			" end, 0) as att_avg" +
+			" FROM batch b" +
+			" left join student_attendance sa on(sa.batch_id = b.batch_id)" +
+			" group by batch_name", nativeQuery = true)
+	List<Map<String, String>> findByBatchWiseStudentsAttendances();
+
 
 	/*@Modifying
 	@Query("insert into Person (id,name,age) select :id,:name,:age from Dual")

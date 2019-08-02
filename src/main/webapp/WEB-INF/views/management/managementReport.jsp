@@ -165,7 +165,6 @@
 										</div>
 									</li>
 
-
 									<li class="portfolio-item2" data-id="id-0" data-type="graphic">
 										<div class="span3">
 											<div class="thumbnail">

@@ -1,6 +1,7 @@
 package in.education.college.common.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import in.education.college.common.util.Constants.Roles;
 import in.education.college.model.Role;
 import in.education.college.model.Service;
 import in.education.college.model.User;
@@ -11,6 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
@@ -19,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,6 +38,8 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 
 	@Autowired
 	private UserService userService;
+
+	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -75,8 +81,26 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 
 		session.setAttribute("servicesMenu", new JSONArray(serviceUrls));
 
-		response.sendRedirect("/home");
+//		response.sendRedirect("/home");
 
+		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+		authorities.forEach(authority -> {
+			if(getRole(Roles.MANAGEMENT_ROLE).equals(authority.getAuthority())) {
+				try {
+					redirectStrategy.sendRedirect(request, response, "/management/managementDashboard");
+
+				} catch (Exception e) {
+				}
+			} else if(!Roles.MANAGEMENT_ROLE.equals(authority.getAuthority())) {
+				try {
+//					response.sendRedirect("/home");
+					redirectStrategy.sendRedirect(request, response, "/home");
+				} catch (Exception e) { }
+			} else {
+				throw new IllegalStateException();
+			}
+		});
 
 		// To get Role Names
 		/*Set<String> roles = authentication.getAuthorities().stream()
@@ -143,7 +167,16 @@ public class AuthenticationSuccess extends SimpleUrlAuthenticationSuccessHandler
 
 //		super.onAuthenticationSuccess(request, response, authentication);
 	}
+
+	private String getRole(String role){
+		if(role.length() == 0){
+			throw new IllegalArgumentException("Role should be passed");
+		} else {
+			return "ROLE_" + role;
+		}
+	}
 }
+
 
 
 /*StreamSupport.stream(roleRepository.findByRoleName("admin").spliterator(), false)
