@@ -43,6 +43,12 @@ public class Constants {
 		public static final int SUPERVIZOR_ROLE_ID = 5;
 	}
 
+	public static final class Profiles {
+		public static final String dev = "dev";
+		public static final String test = "test";
+		public static final String prod = "prod";
+	}
+
 	public static final class StrConstants {
 		public static final String SESSION_USER_NAME = "username";
 

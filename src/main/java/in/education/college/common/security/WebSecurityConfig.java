@@ -1,11 +1,14 @@
 package in.education.college.common.security;
 
+import in.education.college.common.filter.CorsDevEnvironmentFilter;
 import in.education.college.common.util.Constants.Roles;
 import in.education.college.common.util.Constants.Urls;
+import in.education.college.common.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,12 +19,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-//@EnableGlobalMethodSecurity(prePostEnabled = true)	// See this
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 @EnableWebSecurity
@@ -30,11 +33,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsService;
 
 	private AuthenticationFailure authenticationFailure;
+	private Environment env;
+
+	public WebSecurityConfig(){}
 
 	@Autowired()
-	public WebSecurityConfig(@Qualifier("userDetailsService") UserDetailsService userDetailsService, AuthenticationFailure authenticationFailure) {
+	public WebSecurityConfig(@Qualifier("userDetailsService") UserDetailsService userDetailsService,
+			AuthenticationFailure authenticationFailure,
+			Environment env) {
 		this.userDetailsService = userDetailsService;
 		this.authenticationFailure = authenticationFailure;
+		this.env = env;
 	}
 
 	// used to establish an authentication mechanism by allowing AuthenticationProviders to be added easily
@@ -48,7 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	// selection match.  restricts the URLs
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.csrf().disable();
+
+		boolean isProfileDev = Util.isProfileDev(env.getActiveProfiles());
 
 		http
 			.authorizeRequests()
@@ -93,6 +103,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutRequestMatcher(new AntPathRequestMatcher(Urls.LOGOUT))
 				.permitAll()
 				;
+
+		if(isProfileDev) {
+			http.csrf().disable().addFilterBefore(new CorsDevEnvironmentFilter(), CsrfFilter.class);
+		}
 	}
 
 	// is used for configuration settings that impact global security (ignore resources,
@@ -105,36 +119,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.ignoring()
 				.antMatchers("/resources/**");
 	}
-
-
-//				.antMatchers("/college/**").hasAuthority("ADMIN")
-//				.antMatchers("/college/add").access("hasRole('ADMIN')")
-//				.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
-//				.antMatchers("/college/add").hasRole("ADMIN")
-
-	//.logoutSuccessHandler(logoutSucessHandler())
-	//.logoutSuccessUrl("/login")
-
-////				.invalidateHttpSession(true)
-//				.deleteCookies(cookieNamesToClear)
-//				.deleteCookies("JSESSIONID")
-// 				.logoutUrl("/login")
-	//				.defaultSuccessUrl("/home")
-	//			.antMatchers("/css/**").permitAll()
-//				.antMatchers("/", "/home", "/webjars/**").permitAll()
-//			.antMatchers(Urls.CSS_ALL).permitAll()
-//			.antMatchers(Urls.JS_ALL).permitAll()
-//			.antMatchers("/resources/**").permitAll()
-//			.addFilterBefore(getCustomFilter(), BasicAuthenticationFilter.class)
-
-
-	/*@Override
-	public void configure(WebSecurity web) throws Exception {
-		web
-				.ignoring()
-				.antMatchers("/resources/**");
-	}*/
-
 
 	@Bean
 	public AuthenticationSuccessHandler successHandler() {
@@ -158,15 +142,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return s + "**";
 	}
 
-	/*@Bean
-	Filter CustomFilter() {
-		return new CustomFilter();
-	}*/
-
-	/*private Filter getCustomFilter() {
-		return new CustomSecurityFilter();
-	}*/
-
 	String hasRole(String... roles){
 
 		if(roles.length == 0){
@@ -184,6 +159,43 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 }
 
+
+//				.antMatchers("/college/**").hasAuthority("ADMIN")
+//				.antMatchers("/college/add").access("hasRole('ADMIN')")
+//				.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
+//				.antMatchers("/college/add").hasRole("ADMIN")
+
+	//.logoutSuccessHandler(logoutSucessHandler())
+	//.logoutSuccessUrl("/login")
+
+////				.invalidateHttpSession(true)
+//				.deleteCookies(cookieNamesToClear)
+//				.deleteCookies("JSESSIONID")
+// 				.logoutUrl("/login")
+	//				.defaultSuccessUrl("/home")
+	//			.antMatchers("/css/**").permitAll()
+//				.antMatchers("/", "/home", "/webjars/**").permitAll()
+//			.antMatchers(Urls.CSS_ALL).permitAll()
+//			.antMatchers(Urls.JS_ALL).permitAll()
+//			.antMatchers("/resources/**").permitAll()
+//			.addFilterBefore(getCustomFilter(), BasicAuthenticationFilter.class)
+
+	/*@Override
+	public void configure(WebSecurity web) throws Exception {
+		web
+				.ignoring()
+				.antMatchers("/resources/**");
+	}*/
+
+	/*@Bean
+	Filter CustomFilter() {
+		return new CustomFilter();
+	}*/
+
+	/*private Filter getCustomFilter() {
+		return new CustomSecurityFilter();
+	}*/
+
 	/*@Bean
 	public PasswordEncoder encoder() {
 		return new BCryptPasswordEncoder();
@@ -198,7 +210,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	static NoOpPasswordEncoder passwordEncoder() {
 		return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
 	}*/
-
 
 /*@Bean
 	public UserDetailsService userDetailsService() {

@@ -72,7 +72,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+    open-in-view: false
     #database: mysql #default
+
 
     # Two Data Source Information================================================================
 
@@ -129,7 +131,6 @@ logging:
     org.springframework.context.support.DefaultLifecycleProcessor: WARN
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: WARN # url mappings
     org.hibernate: INFO
-
 
 
 # hibernate.dialect: org.hibernate.dialect.MySQL5Dialect

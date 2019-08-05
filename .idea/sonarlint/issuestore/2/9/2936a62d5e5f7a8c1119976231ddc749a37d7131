@@ -1,0 +1,8 @@
+
+dsquid:UselessImportCheck"4Remove this unused import 'java.util.LinkedHashMap'.(ò†ŠÞùÿÿÿÿ8‘Ž‹æÄ-
+jsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ùö¡Ž8ó‹ÅŠÅ-
+isquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(’¨û8¦ÝÛáÄ-
+jsquid:CommentedOutCodeLineµ"<This block of commented-out lines of code should be removed.(½‰ÕÉ8ÓçÁŠÅ-
+^squid:UselessImportCheck".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8Ô°æÄ-
+jsquid:UselessImportCheck
+":Remove this unused import 'javax.persistence.OrderColumn'.(–Î‘úÿÿÿÿ8ù’íèÄ-

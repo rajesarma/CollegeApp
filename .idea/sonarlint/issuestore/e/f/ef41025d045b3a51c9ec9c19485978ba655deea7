@@ -1,13 +1,13 @@
 
-ksquid:S1192{"HDefine a constant instead of duplicating this literal "<User:" 10 times.(Ñ“—†ûÿÿÿÿ8…ÄË‹³-
-ysquid:S1192"ZDefine a constant instead of duplicating this literal "<STUDENT><STUDENT:DELETE>" 3 times.(òÑÂ„8…ÄË‹³-
-Qsquid:S1199Â"-Extract this nested code block into a method.(æĞ’¥ıÿÿÿÿ8…ÄË‹³-
+Qsquid:S1199Ì"-Extract this nested code block into a method.(²¥Ã²ùÿÿÿÿ8…ÄË‹³-
 Qsquid:S1199Ç"-Extract this nested code block into a method.(ï€Åšüÿÿÿÿ8…ÄË‹³-
+€squid:S2629±"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¡Ùï½üÿÿÿÿ8…ÄË‹³-
 Vsquid:S2629ä"7Use the built-in formatting to construct this argument.(î¤ï8…ÄË‹³-
 ysquid:S1192"ZDefine a constant instead of duplicating this literal "<STUDENT><STUDENT:UPDATE>" 3 times.(õà‘Ñ8“½ó‹³-
-€squid:S2629±"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¡Ùï½üÿÿÿÿ8…ÄË‹³-
-Lsquid:S1199½"-Extract this nested code block into a method.(èÑô8…ÄË‹³-
-Qsquid:S1199Ì"-Extract this nested code block into a method.(²¥Ã²ùÿÿÿÿ8…ÄË‹³-
-jsquid:S1192|"LDefine a constant instead of duplicating this literal "<Student : " 7 times.(»îû8…ÄË‹³-
-Qsquid:S1199Ñ"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8…ÄË‹³-
+Qsquid:S1199Â"-Extract this nested code block into a method.(æĞ’¥ıÿÿÿÿ8…ÄË‹³-
 \squid:S3655‘">Call "studentOptional.isPresent()" before accessing the value.(ãğ8ûÆô‹³-
+jsquid:S1192|"LDefine a constant instead of duplicating this literal "<Student : " 7 times.(»îû8…ÄË‹³-
+ksquid:S1192{"HDefine a constant instead of duplicating this literal "<User:" 10 times.(Ñ“—†ûÿÿÿÿ8…ÄË‹³-
+Lsquid:S1199½"-Extract this nested code block into a method.(èÑô8…ÄË‹³-
+ysquid:S1192"ZDefine a constant instead of duplicating this literal "<STUDENT><STUDENT:DELETE>" 3 times.(òÑÂ„8…ÄË‹³-
+Qsquid:S1199Ñ"-Extract this nested code block into a method.(Î—­Šşÿÿÿÿ8…ÄË‹³-

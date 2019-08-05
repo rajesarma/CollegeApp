@@ -223,3 +223,11 @@ m
 =src/main/webapp/WEB-INF/views/management/managementReport.jsp,0\0\002447e303aa4880d33251fd82c19dfce93836c7
 J
 student_woking_queries.sql,2\6\26136c4281e312c41b5993b7ce375bedfc73e639
+k
+;src/main/webapp/WEB-INF/views/common/managementTemplate.jsp,8\0\80643c0e108ba017fb4d5ed15a54061652b666a6
+€
+Psrc/main/java/in/education/college/management/ManagementDashboardController.java,9\b\9b49c1e5bb85679cd49253b9da9a60517a7a6ef6
+@
+Dump20190802.sql,a\d\ad965c847aaab71ef2d3215a8c502a9684a917a7
+p
+@src/main/webapp/WEB-INF/views/management/managementDashboard.jsp,b\b\bb30f66f722e6f578d8f81b21136fb81e452a020
